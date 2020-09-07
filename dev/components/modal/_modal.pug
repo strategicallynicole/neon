@@ -1,0 +1,21 @@
+// Modal
+#modal.modal.fade( tabindex='-1', role='dialog' )
+	.modal-dialog( role='document' )
+		.modal-content
+			.modal-body.text-center
+				h4 Get an offer for
+					br
+					| a basic plan
+				//RD Mailform
+				form.rd-mailform( data-form-output='modal-form-output-global', data-form-type='contact', method='post', action='components/rd-mailform/rd-mailform.php' )
+					.form-group
+						input.form-control( type='text', name='name', placeholder='Your name *', data-constraints='@Required' )
+					.form-group
+						input.form-control( type='email', name='email', placeholder='Your E-mail *', data-constraints='@Email @Required' )
+					.offset-xs
+						button.btn.btn-block( type='submit' ) Send Request
+
+			button.close( type='button', data-dismiss='modal', aria-label='Close' )
+				span( aria-hidden='true' ) ×
+
+#modal-form-output-global.form-output.snackbar.snackbar-secondary

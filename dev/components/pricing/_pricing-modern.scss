@@ -1,0 +1,79 @@
+// Pricing modern
+.pricing-modern {
+	padding: px-to-rem( 30px, 20px );
+	border: $border-width solid transparent;
+	border-radius: $border-radius-xl;
+	@include gradient2( 135deg, 139deg );
+	background-clip: padding-box, border-box;
+	background-origin: padding-box, border-box;
+	box-shadow: $box-shadow-lg;
+}
+
+.pricing-modern-subtitle {
+	font-size: px-to-rem( 16px );
+	font-weight: 500;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+}
+
+.pricing-modern-details {
+	color: $gray-300;
+}
+
+.pricing-modern-price,
+.pricing-modern-period {
+	font-weight: 400;
+}
+
+
+// Spacing
+* + .pricing-modern-divider {
+	margin-top: px-to-rem( 16px );
+}
+
+* + .pricing-modern-title {
+	margin-top: px-to-rem( 20px );
+}
+
+* + .pricing-modern-text {
+	margin-top: px-to-rem( 10px );
+}
+
+* + .pricing-modern-details {
+	margin-top: px-to-rem( 16px );
+}
+
+* + .pricing-modern-btn {
+	margin-top: px-to-rem( 20px );
+}
+
+
+// Modifying
+.pricing-primary {
+	.pricing-modern-subtitle,
+	.pricing-modern-price {
+		color: $primary;
+	}
+}
+
+.pricing-secondary {
+	.pricing-modern-subtitle,
+	.pricing-modern-price {
+		color: $secondary;
+	}
+}
+
+.pricing-success {
+	.pricing-modern-subtitle,
+	.pricing-modern-price {
+		color: $success;
+	}
+}
+
+
+// Media
+@include media-breakpoint-up(xl) {
+	.pricing-modern {
+		padding: px-to-rem( 30px, 30px, 40px );
+	}
+}

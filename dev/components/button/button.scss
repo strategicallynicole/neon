@@ -1,0 +1,128 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../bootstrap/scss/button-group";
+
+
+// Variables
+$btn-gradient-color:   #2D3135;
+$btn-gradient-color-1: #3E4248;
+$btn-gradient-color-2: #2A2E32;
+$btn-gradient-color-3: #313437;
+
+
+// Base
+.btn {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-width: $btn-border-width;
+	border-style: solid;
+	border-color: transparent;
+	font-family: $btn-font-family;
+	font-weight: $btn-font-weight;
+	letter-spacing: 0;
+	background-image:
+		linear-gradient(166deg, transparent 0% 50%, $btn-gradient-color 50%, $btn-gradient-color-1 100%),
+		linear-gradient(166deg, $btn-gradient-color-1 0%, $btn-gradient-color-2 50%, $btn-gradient-color-1 50%, $btn-gradient-color-3 100%);
+	background-position: 0% 0%, 100% 100%;
+	background-size: 200% 200%;
+	background-clip: padding-box, border-box;
+	background-origin: padding-box, border-box;
+	color: $gray-400;
+	text-shadow: inherit;
+	box-shadow: $btn-box-shadow;
+	transition: $transition-longer;
+
+	@include button-size(
+		$btn-padding-y,
+		$btn-padding-x,
+		$btn-font-size,
+		$btn-line-height,
+		$btn-border-radius
+	);
+
+	&:hover,
+	&.hover,
+	&:active,
+	&.active {
+		text-decoration: none;
+		background-position: 100% 100%, 0% 0%;
+		color: $gray-300;
+		box-shadow: $btn-focus-box-shadow;
+	}
+
+	&:focus,
+	&.focus {
+		outline: 0;
+		box-shadow: $btn-focus-box-shadow;
+	}
+
+	&.disabled,
+	&:disabled {
+		opacity: $btn-disabled-opacity;
+		pointer-events: none;
+	}
+}
+
+
+// Icon
+.btn-icon {
+	font-size: 1em;
+	margin: 0 .5em;
+
+	&:first-child {
+		margin-left: 0;
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+
+// Spacing
+* + .btn {
+	margin-top: px-to-rem( 30px );
+}
+
+
+// Modifying
+.btn-block {
+	display: flex;
+	width: 100%;
+}
+
+
+// Sizing
+.btn-sm {
+	@include button-size(
+			$btn-padding-y-sm,
+			$btn-padding-x-sm,
+			$btn-font-size-sm,
+			$btn-line-height-sm,
+			$btn-border-radius-sm
+	);
+	letter-spacing: 0.02em;
+}
+
+.btn-lg {
+	@include button-size(
+			$btn-padding-y-lg,
+			$btn-padding-x-lg,
+			$btn-font-size-lg,
+			$btn-line-height-lg,
+			$btn-border-radius-lg
+	);
+}
+
+
+// Context
+.btn-group {
+	> .btn {
+		margin-top: 0;
+	}
+}

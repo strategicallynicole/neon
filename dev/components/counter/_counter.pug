@@ -1,0 +1,15 @@
+//- Counter simple
+	@param {number} value - counter value
+mixin counter( data )
+	// Counter
+	article.counter&attributes( attributes )
+		.counter-content
+			.counter-value.h3
+				if ( data.prefix )
+					span.counter-prefix= data.prefix
+				span( data-counter )= data.value
+				if ( data.postfix )
+					span.counter-postfix= data.postfix
+			.counter-divider
+				hr.divider
+			.counter-title.bigger= data.title

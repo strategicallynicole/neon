@@ -1,0 +1,26 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../base/mixins";
+@import "../bootstrap/scss/mixins";
+
+
+// Base
+p.rights {
+	color: rgba( $gray-600, .7 );
+	a {
+		color: inherit;
+		&:hover { color: $primary; }
+	}
+}
+
+
+// Spacing
+* + p.rights {
+	margin-top: px-to-rem( 20px );
+}
+
+.row + p.rights {
+	margin-top: px-to-rem( 40px );
+}

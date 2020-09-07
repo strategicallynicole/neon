@@ -1,0 +1,44 @@
+include ../blurb/_blurb
+include ../video/_video
+
+// About
+section#about.section.section-lg
+	.container
+		h2.text-center Choose One
+		.row.row-offset-lg.row-30.align-items-lg-center.justify-content-lg-between
+			.col-lg-4.col-xl-3.justify-content-left.text-left
+				.row.row-30.row-md-40.row-xl-50
+					.col-md-6.col-lg-12
+						+blurb({
+							embed: '<img src="media/img/icon/leads.svg" width="100" />',
+							title: 'You’re down to your last straw.',
+							text:  'You have tried every "new idea" that\'s slithered across your desk and you\'re just… done with it. On any idle Thursday at 11PM, when you can’t sleep and can’t find a solution to your impossible growth challenge, we’re the resource you\'ve always needed.'
+						}).blurb-lg-left.ml-xxl-1
+					.col-lg-12.d-none.d-lg-block
+						hr.divider.mr-0( style='width: 60%' )
+					.col-md-6.col-lg-12
+						+blurb({
+							embed: '<img src="media/img/icon/options.svg" width="100" />',
+							title: 'You\'ve had it up to...',
+							text:  'here with the "magical solution to all your marketing problems" line of crap you\'ve been given. There is no magic pill, But, we can find the blend without wasting more dollars.'
+						}).blurb-lg-left.ml-xxl-1
+			.col-8.col-xs-7.col-md-6.col-lg-3.col-xl-4.text-left.order-first.order-lg-0.py-5.py-lg-0
+				+video
+					.image-hover
+						+img( 'image-09-428x428' )( data-image-to='media/image-10-428x428.jpg' )
+			.col-lg-4.col-xl-3.justify-content-right.text-right
+				.row.row-30.row-md-40.row-xl-50
+					.col-md-6.col-lg-12
+						+blurb({
+							embed: '<img src="media/img/icon/doom.svg" width="100" />',
+							title: 'You need a lifeline. ',
+							text:  'You need leads. You need something actually different. We\’re kind of like the Wolf from Pulp Fiction in business and marketing. When it really hits the fan, we\’re the friend you want to phone.'
+						}).mr-xxl-1
+					.col-lg-12.d-none.d-lg-block
+						hr.divider.ml-0( style='width: 60%' )
+					.col-md-6.col-lg-12
+						+blurb({
+							embed: '<img src="media/img/icon/hithead.svg" width="100" />',
+							title: 'You’re tired of the games.',
+							text:  'So are we, so we stopped playing them. We are good people who do what we love for good people that need what we do.'
+						}).mr-xxl-1

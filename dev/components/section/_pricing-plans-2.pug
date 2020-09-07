@@ -1,0 +1,58 @@
+include ../pricing/_pricing
+include ../multiswitch/_multiswitch
+
+// Pricing plans
+section#pricing.section.section-lg
+	.container
+		.row.justify-content-center
+			.col-xxl-10
+				.group-20.d-sm-flex.align-items-sm-end.justify-content-sm-between.text-center
+					h2 Pricing
+					p We don't want to have a pricing section that has no pricing on it, just a big old "Contact Us" button.  But, we don't do "pre-packaged" solutions.  
+					br 
+					br 
+					| However, you want to know if we are playing the same sport as you. And so do we. If we are out playing Pee-Wee Football and you're training for the SuperBowl, chances are we are not a good fit. Out of respect for your time, we present the following price ranges, with the understanding that there can be variations between projects and chances are we can find a solution that works for your budget.
+				#pricing-group.pricing-group.offset-md
+					// Owl Carousel
+					.owl-carousel.owl-style-1.owl-item-end(
+						data-owl={
+							loop: false,
+							mouseDrag: false,
+							dots: true,
+							autoplay: false,
+							responsive: {
+								768: {
+									items: 2
+								},
+								992: {
+									items: 3
+								},
+								1600: {
+									items: 3,
+									margin: 100
+								}
+							}
+						} )
+						+pricing-modern({
+							subtitle:  'our namesake and flagship',
+							title:     'Strategy',
+							text:      ' <ul><li>36-month roadmap</li><li>personas and journeys</li><li>3+ killer campaigns</li><li>brand pyramid</li><li>execution blueprint</li><li>sales, marketing, brand, and business deep-dive</li><li>industry opportunities audit</li></ul>',
+							price:     '14',
+							priceYear: '159'
+						}).pricing-success.block.block-sm.block-center( data-animate!={ class: 'fadeInUp' } )
+						+pricing-modern({
+							subtitle:  'Personal',
+							title:     'Standard',
+							text:      'Ut enim ad minim veniam, quis nostrud sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+							price:     '30',
+							priceYear: '350'
+						}).pricing-secondary.block.block-sm.block-center( data-animate!={ class: 'fadeInUp' } )
+						+pricing-modern({
+							subtitle:  'For team',
+							title:     'Premium',
+							text:      'Ut enim ad minim veniam, quis nostrud sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+							price:     '50',
+							priceYear: '550'
+						}).pricing-primary.block.block-sm.block-center( data-animate!={ class: 'fadeInUp' } )
+
+include ../modal/_modal

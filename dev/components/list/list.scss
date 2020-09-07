@@ -1,0 +1,106 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../base/mixins";
+@import "../bootstrap/scss/mixins";
+
+
+// Base
+.list {
+	.list,
+	> .list-item + .list-item {
+		margin-top: .54em;
+	}
+}
+
+.list-link {
+	color: inherit;
+
+	&:hover {
+		color: $primary;
+	}
+}
+
+
+// Modifying
+.list-xs {
+	.list,
+	> .list-item + .list-item {
+		margin-top: 0;
+	}
+}
+
+
+// List marked
+.list-marked {
+	> .list-item {
+		&::before {
+			display: inline-block;
+			vertical-align: middle;
+			content: '\f225';
+			margin-right: 1.25em;
+			font-size: .534em;
+			font-family: 'Material Design Icons';
+			line-height: 1;
+		}
+	}
+
+	.list-marked {
+		margin-left: 3em;
+	}
+}
+
+
+// List marked check
+.list-marked-check {
+	> .list-item {
+		&::before {
+			display: inline-block;
+			content: '\f222';
+			margin-right: .56em;
+			font-size: 1.2em;
+			font-family: 'Material Design Icons';
+			line-height: 1;
+		}
+	}
+
+	.list-marked-check {
+		margin-left: 2.9em;
+	}
+}
+
+
+// List column
+.list-2-column {
+	column-gap: px-to-rem( 30px );
+	column-count: 2;
+}
+
+
+// Spacing
+* + .list {
+	margin-top: px-to-rem( 20px );
+}
+
+
+// Theming
+@each $color, $value in $theme-colors {
+	.list-#{$color} {
+		> .list-item::before {
+			color: $value;
+		}
+	}
+}
+
+
+// Media
+@include media-breakpoint-up(xl) {
+	* + .list {
+		margin-top: px-to-rem( 30px );
+	}
+}
+
+
+// Layouts
+@import "list-social";

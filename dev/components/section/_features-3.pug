@@ -1,0 +1,54 @@
+include ../blurb/_blurb
+include ../counter/_counter
+
+// Features
+section#features.section.section-md.pb-lg-0
+	.container
+		.row.row-10
+			.col-10.col-sm-8.col-lg-6.col-xxl-7.text-center(style="background: url('media/img/renderings/groupofmonsters.png'); width: 300px; border-radius: 40px; background-size: cover; background-attachment: fixed;")
+			.col-lg-6.col-xxl-5.pb-lg-4
+				.title-icon.group-20.mt-xxl-2
+					span.icon.icon-circle.icon-xl.icon-style-4
+						img(src="media/img/icon/oakwave-strategy.svg", style="width: 60px;" ).partner-image.grayscale
+					h2 About Us
+					p We call ourselves strategy symphony conductors, marketing de-spaghettification experts, and problem-solving superheroes. 
+				.tab.tab-line
+					ul.nav.nav-line.nav-line-mod-2.bigger
+						li.nav-item( role='presentation' )
+							a.nav-link.active.show( href='#tabs-1-1', data-toggle='tab' ) By the Numbers
+						li.nav-item( role='presentation' )
+							a.nav-link( href='#tabs-1-2', data-toggle='tab' ) Our Team
+						li.nav-item( role='presentation' )
+							a.nav-link( href='#tabs-1-3', data-toggle='tab' ) About Strategy
+					// Tab panes
+					.tab-content.pt-3
+						#tabs-1-1.tab-pane.fade.active.show
+							.row
+								p We don't like to brag, but... oh wait, yes, we do.
+							.row.row-30.justify-content-lg-center.mt-3.text-center
+								.col-6.col-sm-4
+									+counter({
+										value: 412,
+										title: 'Campaigns Launched'
+									}).block.block-xxs.block-center
+								.col-6.col-sm-4
+									+counter({
+										value:   531,
+										postfix: '',
+										title:   'Strategies Completed'
+									}).block.block-xxs.block-center
+								.col-6.col-sm-4
+									+counter({
+										value:   196,
+										postfix: 'M',
+										prefix: '$',
+										title:   'Attributable Revenue'
+									}).block.block-xxs.block-center
+						#tabs-1-2.tab-pane.fade
+							p.bigger We are ushering in a new wave of agency relationships while relying upon the oak solid foundations that made marketing amazing in the first place.
+
+							a.btn.btn-sm( href='#' ) Explore Now
+						#tabs-1-3.tab-pane.fade
+							p.bigger On a mission to take the bullshit out of strategy. 
+							img(src="media/img/frameworkwithoutbackground.svg", style="width: 400px;" ).partner-image.grayscale
+							a.btn.btn-sm( href='#' ) Learn More

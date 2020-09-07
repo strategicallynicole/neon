@@ -1,0 +1,129 @@
+include ../post/_post
+
+// Features
+section.section.section-lg.pb-0
+	.container
+		.row.row-10.align-items-lg-end.justify-content-lg-between
+			.col-lg-8.col-xl-7.col-xxl-5
+				h2 What's new?
+				p.biggest Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			.col-lg-auto
+				ul.nav.nav-line.slick-filter.bigger.justify-content-start
+					li.nav-item.slick-filter-item( role='presentation' )
+						button.nav-link.slick-filter-link.active( data-filter='*', data-toggle='tab' ) See All
+					li.nav-item.slick-filter-item( role='presentation' )
+						button.nav-link.slick-filter-link( data-filter='Popular', data-toggle='tab' ) Popular
+					li.nav-item.slick-filter-item( role='presentation' )
+						button.nav-link.slick-filter-link( data-filter='Newest', data-toggle='tab' ) Newest
+
+	.slick-slider.slick-slider-1(
+		data-slick!={
+			infinite: false,
+			arrows: true,
+			slidesToShow: 3,
+			autoplay: false,
+			responsive: [
+				{
+					breakpoint: 992,
+					settings: {
+						slidesToShow: 2
+					}
+				},
+				{
+					breakpoint: 576,
+					settings: {
+						slidesToShow: 1
+					}
+				}
+			]
+		} )
+		div( data-category='Newest' )
+			+post({
+				img:   'image-11-640x464',
+				title: 'We Have a Lot of Useful Solutions for You',
+				time: {
+					date: '2020',
+					text: 'Jan 10, 2020'
+				}
+			})
+		div( data-category='Popular' )
+			+post({
+				img:   'image-12-640x464',
+				title: 'We Have a Lot of Useful Solutions for You',
+				time: {
+					date: '2020',
+					text: 'Jan 10, 2020'
+				}
+			})
+		div( data-category='Newest' )
+			+post({
+				img:   'image-13-640x464',
+				title: 'We Have a Lot of Useful Solutions for You',
+				time: {
+					date: '2020',
+					text: 'Jan 10, 2020'
+				}
+			})
+		div( data-category='Popular' )
+			+post({
+				img:   'image-15-640x464',
+				title: 'We Have a Lot of Useful Solutions for You',
+				time: {
+					date: '2020',
+					text: 'Jan 10, 2020'
+				}
+			})
+		div( data-category='Newest' )
+			+post({
+				img:   'image-16-640x464',
+				title: 'We Have a Lot of Useful Solutions for You',
+				time: {
+					date: '2020',
+					text: 'Jan 10, 2020'
+				}
+			})
+		div( data-category='Popular' )
+			+post({
+				img:   'image-11-640x464',
+				title: 'We Have a Lot of Useful Solutions for You',
+				time: {
+					date: '2020',
+					text: 'Jan 10, 2020'
+				}
+			})
+		div( data-category='Newest' )
+			+post({
+				img:   'image-12-640x464',
+				title: 'We Have a Lot of Useful Solutions for You',
+				time: {
+					date: '2020',
+					text: 'Jan 10, 2020'
+				}
+			})
+		div( data-category='Popular' )
+			+post({
+				img:   'image-13-640x464',
+				title: 'We Have a Lot of Useful Solutions for You',
+				time: {
+					date: '2020',
+					text: 'Jan 10, 2020'
+				}
+			})
+		div( data-category='Newest' )
+			+post({
+				img:   'image-15-640x464',
+				title: 'We Have a Lot of Useful Solutions for You',
+				time: {
+					date: '2020',
+					text: 'Jan 10, 2020'
+				}
+			})
+		div( data-category='Newest' )
+			+post({
+				img:   'image-16-640x464',
+				title: 'We Have a Lot of Useful Solutions for You',
+				time: {
+					date: '2020',
+					text: 'Jan 10, 2020'
+				}
+			})

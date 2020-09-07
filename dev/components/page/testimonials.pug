@@ -1,0 +1,59 @@
+extends ../base/_skeleton
+include ../quote/_quote
+
+block variables
+	- pageName = 'Testimonials';
+
+block page
+	+rd-navbar
+
+	section.section.section-lg.section-one-screen
+		.container
+			h2.text-center What People Say
+			.row.row-offset-lg.justify-content-center
+				.col-xl-11.col-xxl-8
+					.owl-carousel.owl-style-1(
+						data-owl={
+							dots: true,
+							responsive: {
+								768: {
+									items: 2
+								}
+							}
+						} )
+						+quote-modern({
+							img:     'persons/person-01-64x64',
+							name:    'John Doue',
+							text:    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing.',
+							company: 'SEO "Company"'
+						})
+						+quote-modern({
+							img:     'persons/person-02-64x64',
+							name:    'John Doue',
+							text:    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing.',
+							company: 'SEO "Company"'
+						})
+						+quote-modern({
+							img:     'persons/person-03-64x64',
+							name:    'John Doue',
+							text:    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing.',
+							company: 'SEO "Company"'
+						})
+						+quote-modern({
+							img:     'persons/person-04-64x64',
+							name:    'John Doue',
+							text:    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing.',
+							company: 'SEO "Company"'
+						})
+						+quote-modern({
+							img:     'persons/person-01-64x64',
+							name:    'John Doue',
+							text:    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing.',
+							company: 'SEO "Company"'
+						})
+						+quote-modern({
+							img:     'persons/person-02-64x64',
+							name:    'John Doue',
+							text:    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing.',
+							company: 'SEO "Company"'
+						})

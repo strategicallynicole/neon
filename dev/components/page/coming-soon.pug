@@ -1,0 +1,44 @@
+extends ../base/_skeleton
+include ../countdown/_countdown
+include ../rights/_rights
+
+block variables
+	- pageName = 'Coming soon';
+
+block page
+	section.section.section-one-screen.section-one-screen-1.position-relative.justify-content-xl-between
+		.bg-layer.d-none.d-xl-flex.align-items-xl-end
+			svg.image-svg(width='1920', height='836', viewBox='0 0 1920 836', fill='none', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+				path(opacity='0.03', d='M960.5 670.5H0V836H1920V0.5H1165.5C1107.51 0.5 1060.5 47.5101 1060.5 105.5V570.5C1060.5 625.728 1015.73 670.5 960.5 670.5Z', fill='white')
+				path(d='M1183 206V638C1183 687.706 1223.29 728 1273 728H1920V116H1273C1223.29 116 1183 156.294 1183 206Z', fill='url(#pattern0)')
+				defs
+					pattern#pattern0(patternContentUnits='objectBoundingBox', width='1', height='1')
+						use(xlink:href='#image0', transform='scale(0.00135685 0.00163399)')
+					image#image0(width='737', height='612', xlink:href='media/image-19-737x612.jpg')
+		.section-one-screen-body
+			.container.position-relative
+				.row
+					.col-lg-7.col-xl-5.offset-xl-1
+						+logo
+						.offset-xl
+							h2 We're getting ready
+								| #[br.d-none.d-sm-none]
+								| to launch in
+							p.biggest Our website is under construction, we are working very hard
+								| #[br.d-none.d-sm-none]
+								| to give you the best experience on our new web site.
+						+countdown( { to: '2020-12-31' } )
+						.block.block-1.offset-sm
+							form.rd-mailform.form-inline.group-20( data-form-output='form-output-subscribe', data-form-type='subscribe', method='post', action='components/rd-mailform/rd-mailform.php' )
+								.form-inline-group
+									input.form-control( type='email', name='email', placeholder='Your Email', data-constraints='@Email @Required' )
+								button.btn( type='submit' )
+									span Subcsribe
+									span.btn-icon.icon.icon-sm.icon-primary.mdi-send
+		.section-one-screen-footer
+			.container.position-relative
+				.row
+					.col-xl-auto.offset-xl-1
+						+rights
+
+	#form-output-subscribe.form-output.snackbar.snackbar-secondary

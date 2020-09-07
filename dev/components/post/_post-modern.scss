@@ -1,0 +1,23 @@
+// Post modern
+.post-modern {
+
+}
+
+.post-modern-title {
+	font-weight: 400;
+}
+
+.post-modern-time {
+	font-weight: 400;
+	color: $secondary;
+}
+
+
+// Spacing
+* + .post-modern-time {
+	margin-top: px-to-rem( 15px );
+}
+
+* + .post-modern-figure {
+	margin-top: px-to-rem( 30px );
+}

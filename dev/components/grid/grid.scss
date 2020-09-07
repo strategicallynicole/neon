@@ -1,0 +1,103 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins/breakpoints";
+@import "../bootstrap/scss/mixins/grid-framework";
+@import "../bootstrap/scss/mixins/grid";
+@import "../bootstrap/scss/grid";
+
+
+// Mixins
+// Grid-dedicated columns spacing
+@mixin grid-spacing( $offset ) {
+	margin-bottom: -$offset;
+
+	&:empty {
+		margin-bottom: 0;
+	}
+
+	> * {
+		margin-bottom: $offset;
+	}
+}
+
+
+// Base
+.row-5 {
+	@include grid-spacing( 5px );
+}
+
+.row-10 {
+	@include grid-spacing( 10px );
+}
+
+.row-20 {
+	@include grid-spacing( 20px );
+}
+
+.row-30 {
+	@include grid-spacing( 30px );
+}
+
+
+// Spacing
+* + .row {
+	margin-top: px-to-rem( 40px );
+}
+
+
+// Media
+@include media-breakpoint-up(md) {
+	.row-md-40 {
+		@include grid-spacing( 40px );
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.row-lg-0 {
+		@include grid-spacing(0px);
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.row-xl-0 {
+		@include grid-spacing( 0px );
+	}
+
+  .row-xl-40 {
+		@include grid-spacing( 40px );
+	}
+
+	.row-xl-50 {
+		@include grid-spacing( 50px );
+	}
+
+	.row-xl-60 {
+		@include grid-spacing( 60px );
+	}
+
+	* + .row-offset-sm,
+	* + .row-offset-md {
+		margin-top: px-to-rem( 50px );
+	}
+
+	* + .row-offset-lg,
+	* + .row-offset-xl {
+		margin-top: px-to-rem( 60px );
+	}
+}
+
+@include media-breakpoint-up(xxl) {
+	* + .row-offset-md {
+		margin-top: px-to-rem( 60px );
+	}
+
+	* + .row-offset-lg {
+		margin-top: px-to-rem( 70px );
+	}
+
+	* + .row-offset-xl {
+		margin-top: px-to-rem( 80px );
+	}
+}

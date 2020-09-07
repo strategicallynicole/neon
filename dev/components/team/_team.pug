@@ -1,0 +1,39 @@
+//- Team
+	@param {object} data - data object
+	@param {string} data.img - quote img
+	@param {object} data.time - team time
+	@param {string} data.time.date - team time datetime
+	@param {string} data.time.text - team time text
+	@param {string} data.title - team title
+mixin team( data )
+	// Post
+	article.team.image-hover&attributes( attributes )
+		+img( data.img ).team-image
+		.team-caption
+			.team-time.h4
+				time( datetime= data.time.date )= data.time.text
+			h3.team-title
+				a( href='#' )= data.title
+		.team-dummy
+
+
+//- Team mini
+	@param {object} data - data object
+	@param {string} data.name - team name
+	@param {string} data.position - team position
+mixin team-mini( data )
+	// Team mini
+	article.team-mini&attributes( attributes )
+		a.team-mini-figure( href='#' )
+			+img( data.img ).team-mini-image
+		h5.team-mini-name
+			a( href='#' )= data.name
+		.team-mini-position= data.position
+
+//- Team Classic
+mixin team-classic( obj )
+	article.team.team-classic&attributes( attributes )
+		figure.team-classic-figure
+			a.image-hover( href='#' ): +img( obj.img )( data-image-to= obj.imgHover )
+		h4.team-classic-name: a( href='#' )= obj.name
+		h5.team-classic-position= obj.position

@@ -1,0 +1,78 @@
+// Blurb creative
+.blurb-creative {
+	* + .blurb-body {
+		margin-top: px-to-rem( 20px );
+	}
+}
+
+
+// Media
+@include media-breakpoint-up(xl) {
+	.blurb-creative {
+		position: absolute;
+		display: inline-block;
+		transform: translate3d( -50%, -50%, 0 );
+
+		.blurb-body {
+			position: absolute;
+			width: px-to-rem( 245px );
+		}
+
+		.blurb-embed .blurb-icon {
+			width: 5.21vw;
+			height: 5.21vw;
+			font-size: 2.1vw;
+		}
+	}
+
+	.blurb-creative-1 {
+		top: 66%;
+		left: 10.4%;
+	}
+
+	.blurb-creative-2 {
+		top: 51%;
+		left: 32%;
+	}
+
+	.blurb-creative-3 {
+		top: 66.2%;
+		left: 53.5%;
+	}
+
+	.blurb-creative-4 {
+		top: 35%;
+		left: 74.9%;
+	}
+
+	.blurb-creative-wrap {
+		position: relative;
+		padding-top: 2.1vw;
+		height: 29.95vw;
+
+		.container {
+			max-width: 85.9375vw;
+		}
+	}
+
+	.blurb-creative-item {
+		position: static;
+	}
+
+	.blurb-creative-heading {
+		position: relative;
+		font-size: 2.396vw;
+	}
+}
+
+@include media-breakpoint-between(xl, xl) {
+	.blurb-creative {
+		.blurb-title {
+			font-size: px-to-rem( 18px );
+		}
+
+		.blurb-text {
+			font-size: px-to-rem( 14px );
+		}
+	}
+}

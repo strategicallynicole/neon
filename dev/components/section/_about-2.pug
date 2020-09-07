@@ -1,0 +1,67 @@
+include ../team/_team
+
+// About
+section#about.section.section-lg
+	.container
+		.row.row-30
+			.col-lg-6.col-xl-5
+				.team-mini-wrap.bg-image( style='background-image: url("media/image-21-574x528.png")' )
+					+team-mini({
+						img:      'persons/person-01-114x114',
+						name:     'Eva Adams',
+						position: 'Product Manager'
+					}).team-mini-1.team-mini-secondary
+					+team-mini({
+						img:      'persons/person-02-114x114',
+						name:     'John Smith',
+						position: 'CEO “Neon”'
+					}).team-mini-2
+					+team-mini({
+						img:      'persons/person-03-114x114',
+						name:     'Sam Jones',
+						position: 'UI Designer'
+					}).team-mini-3.team-mini-success
+					+team-mini({
+						img:      'persons/person-04-114x114',
+						name:     'Edward Lee',
+						position: 'Lead Developer'
+					}).team-mini-4
+
+			.col-lg-6.col-xl-7
+				.tab.tab-modern
+					ul.nav.nav-modern.bigger
+						li.nav-item( role='presentation' )
+							a.nav-link.active.show( href='#tabs-3-1', data-toggle='tab' )
+								span.position-relative About
+						li.nav-item( role='presentation' )
+							a.nav-link( href='#tabs-3-2', data-toggle='tab' )
+								span.position-relative Features
+						li.nav-item( role='presentation' )
+							a.nav-link( href='#tabs-3-3', data-toggle='tab' )
+								span.position-relative Team
+					// Tab panes
+					.tab-content
+						#tabs-3-1.tab-pane.fade.active.show
+							h2 A Few Words About Us
+							p.bigger Ut enim ad minim veniam, quis nostrud sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							p.bigger Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+							.offset-sm
+								a.btn.btn-sm.pr-1( href='single-post.html' )
+									span Learn More
+									span.btn-icon.icon.icon-circle.icon-xs.icon-style-2.ml-5.mdi-arrow-right
+						#tabs-3-2.tab-pane.fade
+							h2 A Few Words About Us
+							p.bigger Cur turpis messis? Ubi est gratis ausus? Cobaltum brevis species est. Lubas observare in clemens tubinga! Cum clabulare peregrinationes, omnes bromiumes anhelare brevis.
+							p.bigger Gratis, primus pulchritudines absolute captis de varius, lotus sensorem. Experimentum cito ducunt ad peritus mineralis. Lacta de velox accola, consumere racana! Cur lapsus experimentum?
+							.offset-sm
+								a.btn.btn-sm.pr-1( href='single-post.html' )
+									span Learn More
+									span.btn-icon.icon.icon-circle.icon-xs.icon-style-2.ml-5.mdi-arrow-right
+						#tabs-3-3.tab-pane.fade
+							h2 A Few Words About Us
+							p.bigger Vae. Cum extum accelerare, omnes messores locus secundus, clemens vortexes. Consiliums volare in hortus! Varius, alter ignigenas unus attrahendam de brevis, talis aonides.
+							p.bigger A falsis, compater fidelis fluctus. A falsis, silva azureus danista. Cum domus ridetis, omnes messores visum placidus, grandis adiuratores. Est regius ignigena, cesaris. Placidus, noster cursuss superbe.
+							.offset-sm
+								a.btn.btn-sm.pr-1( href='single-post.html' )
+									span Learn More
+									span.btn-icon.icon.icon-circle.icon-xs.icon-style-2.ml-5.mdi-arrow-right

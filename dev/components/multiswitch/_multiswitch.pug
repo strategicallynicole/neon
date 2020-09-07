@@ -1,0 +1,25 @@
+//- Multiswitch
+	@param {object} data - multiswitch data object
+mixin switch-toggle( data )
+	.switch-toggle( data-multi-switch= data )&attributes( attributes )
+		.guide
+		.slider
+
+//- Multiswitch modern
+	@param {object} data - multiswitch data object
+mixin switch-toggle-modern( data )
+	.switch-toggle-modern( data-multi-switch= data )&attributes( attributes )
+		.guide
+		.slider
+			.slider-dot
+			.slider-dot
+
+//- Multi switch
+	@param {object} data - data object
+mixin switch-with-text( data )
+	// Multi switch
+	.switch-text.group-25.d-inline-flex.align-items-center.justify-content-center&attributes( attributes )
+		div
+			span.switch-text-left.biggest= data.textLeft
+			span.switch-text-right.biggest.ml-2.border-left.pl-2= data.textRight
+		+switch-toggle-modern( data.targets )

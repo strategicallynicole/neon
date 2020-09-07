@@ -1,0 +1,62 @@
+// Mixins
+@mixin bg-variant( $class, $color ) {
+	#{$class} {
+		background-color: $color;
+	}
+}
+
+@mixin bg-adjacent() {
+	&:not([style*='background-']) + &:not([style*='background-']) {
+		padding-top: 0;
+	}
+}
+
+
+// Theme backgrounds
+@each $color, $value in $theme-colors {
+	@include bg-variant( ".bg-#{$color}", $value );
+
+	.bg-#{$color} {
+		@include bg-adjacent();
+	}
+}
+
+
+// Gray backgrounds
+@each $color, $value in $grays {
+	@include bg-variant( ".bg-#{$color}", $value );
+
+	.bg-#{$color} {
+		@include bg-adjacent();
+	}
+}
+
+
+// Specific background colors
+.bg-white {
+	background-color: $white;
+	@include bg-adjacent();
+}
+
+.bg-transparent {
+	background-color: transparent;
+	@include bg-adjacent();
+}
+
+
+// Image background
+.bg-image {
+	background-position: center center;
+	background-size: cover;
+}
+
+
+// Background layer
+.bg-layer {
+	position: absolute;
+	content: '';
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}

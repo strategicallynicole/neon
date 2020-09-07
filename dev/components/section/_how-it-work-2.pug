@@ -1,0 +1,35 @@
+include ../blurb/_blurb
+
+// Features
+section.section.section-lg
+	.blurb-creative-wrap
+		svg.image-svg.position-absolute.d-none.d-xl-block( style='top: 0; left: 0', width='1920', height='412', viewBox='0 0 1920 412', fill='none')
+			path(opacity='0.3', d='M0 235.992C0 235.992 178.218 424.558 319.5 410.5C460.782 396.442 564.476 269.165 722.686 263.543C880.895 257.921 977.722 429.791 1147 391C1316.28 352.209 1486.6 58.563 1920 1', stroke='#6B6F77')
+		.container
+			h2.blurb-creative-heading
+				| The sales and delivery process
+			.row.row-30
+				.col-sm-6.col-lg-3.blurb-creative-item
+					+blurb-creative({
+						embed: '<span class="blurb-icon icon icon-circle icon-xl icon-primary icon-style-4"><img src="media/img/icon/roadmap.svg" class="mdi-custom" /></span>',
+						title: '<span class="text-primary"></span>',
+						text:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
+					}).blurb-creative-1
+				.col-sm-6.col-lg-3.blurb-creative-item
+					+blurb-creative({
+						embed: '<span class="blurb-icon icon icon-circle icon-xl icon-primary icon-style-4 mdi-settings"></span>',
+						title: '<span class="text-primary">02.</span> Configure Neon',
+						text:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
+					}).blurb-creative-2
+				.col-sm-6.col-lg-3.blurb-creative-item
+					+blurb-creative({
+						embed: '<span class="blurb-icon icon icon-circle icon-xl icon-primary icon-style-4 mdi-chart-arc"></span>',
+						title: '<span class="text-primary">03.</span> Add a Task',
+						text:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
+					}).blurb-creative-3
+				.col-sm-6.col-lg-3.blurb-creative-item
+					+blurb-creative({
+						embed: '<span class="blurb-icon icon icon-circle icon-xl icon-primary icon-style-4 mdi-rocket"></span>',
+						title: '<span class="text-primary">04.</span> Get Results',
+						text:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
+					}).blurb-creative-4

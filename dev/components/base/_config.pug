@@ -1,0 +1,114 @@
+-
+	var
+		logo = {
+			default: 'logo-default-113x30.svg',
+			inverse: 'logo-inverse-112x30.svg',
+			name:    'OAKwave'
+		},
+
+		menuHome = {
+			type: 'root',
+			child: [
+				{
+					title: 'Home',
+					link: '#index',
+					home: true,
+				},
+				{ title: 'Blog', link: '#blog' },
+				{ title: 'Pricing', link: '#pricing' },
+				{ title: 'Contacts', link: '#contacts' },
+				{
+					title: 'Blog',
+					link: '#blog',
+					child: {
+						type: 'dropdown',
+						child: [
+							{ title: '404 page' },
+							{ title: 'Coming soon' },
+							{ title: 'Elements' },
+							{ title: 'FAQ' },
+							{ title: 'Privacy Policy' },
+							{ title: 'Testimonials' },
+							{ title: 'Testimonials 2' },
+							{ title: 'Single career'},
+							{ title: 'Single post'}
+						]
+					}
+				}
+			]
+		},
+
+		menu = {
+			type: 'root',
+			child: [
+				{
+					title: 'Home',
+					link: 'index.html',
+				},
+				{ title: 'Testimonials', link: 'testimonials.html' },
+				{ title: 'Elements', link: 'elements.html' },
+				{
+					title: 'Pages',
+					link: '#pages',
+					child: {
+						type: 'dropdown',
+						child: [
+							{ title: '404 page' },
+							{ title: 'Coming soon' },
+							{ title: 'FAQ' },
+							{ title: 'Privacy Policy' },
+							{ title: 'Testimonials 2' },
+							{ title: 'Single career' },
+							{ title: 'Single post' }
+						]
+					}
+				}
+			]
+		},
+
+		menuHome3 = {
+			type: 'root',
+			child: [
+				{
+					title: 'Home',
+					link: '#home',
+					home: true,
+					child: {
+						type: 'dropdown',
+						child: [
+							{ title: 'Home', link: 'index.html' },
+							{ title: 'Home #2', link: 'index-2.html' },
+							{ title: 'Home #3', link: 'index-3.html' }
+						]
+					}
+				},
+				{ title: 'Features', link: '#features' },
+				{
+					title: 'Pages',
+					link: '#pages',
+					child: {
+						type: 'dropdown',
+						child: [
+							{ title: '404 page' },
+							{ title: 'Coming soon' },
+							{ title: 'Elements' },
+							{ title: 'FAQ' },
+							{ title: 'Privacy Policy' },
+							{ title: 'Testimonials' },
+							{ title: 'Testimonials 2' },
+							{ title: 'Single career' },
+							{ title: 'Single post' }
+						]
+					}
+				},
+				{ title: 'Get in Touch', link:  '#contacts' },
+			]
+		},
+
+		homePage,
+		pageName,
+		pageId,
+		pageClass,
+		pageImage,
+		htmlClass,
+		breadcrumbs = [];

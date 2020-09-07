@@ -1,0 +1,55 @@
+//- Pricing
+	@param {object} data - data object
+	@param {string} data.badge - pricing badge
+	@param {string} data.title - pricing title
+	@param {string} data.price - price for month
+	@param {string} data.priceYear - price for year
+mixin pricing( data )
+	// Pricing
+	article.pricing&attributes( attributes )
+		if( data.badge === true )
+			.pricing-badge Popular
+		.pricing-body
+			.pricing-title.biggest= data.title
+			.pricing-details
+				.pricing-price.h2
+					span.pricing-month= '$' + data.price
+					span.pricing-year= '$' + data.priceYear
+				.pricing-period
+					| Per
+					.h5.font-weight-normal
+						span.pricing-month Month
+						span.pricing-year Year
+			.pricing-divider
+				hr.divider
+			.pricing-list
+				block
+			.pricing-btn
+				button.btn.btn-sm( data-modal-trigger!={ target: '#modal' } ) Select Plan
+
+
+//- Pricing modern
+	@param {object} data - data object
+	@param {string} data.subtitle - pricing subtitle
+	@param {string} data.title - pricing title
+	@param {string} data.text - pricing text
+	@param {string} data.price - price for month
+	@param {string} data.priceYear - price for year
+mixin pricing-modern( data )
+	// Pricing modern
+	article.pricing-modern&attributes( attributes )
+		.pricing-modern-subtitle= data.subtitle
+		.pricing-modern-divider
+			hr.divider
+		.pricing-modern-title.h4= data.title
+		.pricing-modern-text= data.text
+		.pricing-modern-details
+			span.pricing-modern-price.h4
+				span.pricing-month= '$' + data.price
+				span.pricing-year= '$' + data.priceYear
+			span.pricing-modern-period.h5
+				=' / '
+				span.pricing-month month
+				span.pricing-year year
+		.pricing-modern-btn
+			button.btn.btn-sm( data-modal-trigger!={ target: '#modal' } ) Select Plan

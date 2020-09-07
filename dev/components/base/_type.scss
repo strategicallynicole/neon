@@ -1,0 +1,391 @@
+html {
+    font-size: 13px;
+    @include media-breakpoint-up( md) {
+        font-size: 14px;
+    }
+    @include media-breakpoint-up( xl) {
+        font-size: 16px;
+    }
+}
+
+.neubtn {
+    color: #ffffff;
+    margin-top: 35px;
+    width: 35% !important;
+}
+
+.oswald {
+    font-family: 'Oswald' !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+}
+
+.lgtext {
+    font-size: 1.1em !important;
+    text-transform: uppercase !important;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a {
+    color: #ffffff !important;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.neubtn a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+.effect-underline {
+    font-family: 'Oswald' !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+}
+
+a:hover {
+    /* color: #5c4e8b; */
+    /* text-decoration: underline; */
+}
+
+
+/*effect-underline*/
+
+.effect-underline:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    height: 1em;
+    width: 100%;
+    border-bottom: 1px solid;
+    margin-top: 10px;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+}
+
+.effect-underline:hover:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+
+/*effect-box*/
+
+.effect-box:after,
+.effect-box:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    height: 1em;
+    width: 100%;
+    margin-top: 10px;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+}
+
+.effect-box:before {
+    border-left: 1px solid;
+    border-right: 1px solid;
+    -webkit-transform: scale(1, 0);
+    transform: scale(1, 0);
+}
+
+.effect-box:after {
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+}
+
+.effect-box:hover:after,
+.effect-box:hover:before {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+
+/* effect-shine */
+
+.effect-shine:hover {
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%) !important;
+    -webkit-mask-size: 200%;
+    animation: shine 2s infinite;
+}
+
+@-webkit-keyframes shine {
+    from {
+        -webkit-mask-position: 150%;
+    }
+    to {
+        -webkit-mask-position: -50%;
+    }
+}
+
+.to-top {
+    background: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
+}
+
+.to-top:hover {
+    background: #6c5ba7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    color: #efefef;
+}
+
+ul,
+ol {
+    list-style: disc;
+}
+
+// Headings
+#{headings()} {
+    margin: 0;
+    a {
+        color: inherit;
+        &:hover {
+            color: #efefef;
+        }
+    }
+}
+
+h1,
+.h1 {
+    font-size: 30px;
+    letter-spacing: 0;
+    @include media-breakpoint-up(sm) {
+        font-size: 35px;
+    }
+    @include media-breakpoint-up( md) {
+        font-size: 40px;
+    }
+    @include media-breakpoint-up( lg) {
+        font-size: 50px;
+        line-height: $h1-line-height;
+    }
+    @include media-breakpoint-up(xl) {
+        font-size: 60px;
+    }
+    @include media-breakpoint-up( xxl) {
+        font-size: $h1-font-size;
+    }
+}
+
+h2,
+.h2 {
+    font-size: 26px;
+    line-height: $h2-line-height;
+    letter-spacing: -0.01em;
+    @include media-breakpoint-up(sm) {
+        font-size: 30px;
+    }
+    @include media-breakpoint-up( md) {
+        font-size: 34px;
+    }
+    @include media-breakpoint-up( lg) {
+        font-size: 38px;
+    }
+    @include media-breakpoint-up(xl) {
+        font-size: 42px;
+    }
+    @include media-breakpoint-up( xxl) {
+        font-size: $h2-font-size;
+    }
+}
+
+h3,
+.h3 {
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: 0;
+    @include media-breakpoint-up(sm) {
+        font-size: 26px;
+    }
+    @include media-breakpoint-up( md) {
+        font-size: 29px;
+    }
+    @include media-breakpoint-up( lg) {
+        font-size: 32px;
+        line-height: $h3-line-height;
+    }
+    @include media-breakpoint-up(xl) {
+        font-size: 35px;
+    }
+    @include media-breakpoint-up( xxl) {
+        font-size: $h3-font-size;
+    }
+}
+
+h4,
+.h4 {
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    @include media-breakpoint-up(sm) {
+        font-size: 22px;
+    }
+    @include media-breakpoint-up( md) {
+        font-size: 24px;
+    }
+    @include media-breakpoint-up( lg) {
+        font-size: 26px;
+        line-height: $h4-line-height;
+    }
+    @include media-breakpoint-up(xl) {
+        font-size: 28px;
+    }
+    @include media-breakpoint-up( xxl) {
+        font-size: $h4-font-size;
+    }
+}
+
+h5,
+.h5 {
+    font-size: 18px;
+    line-height: $h5-line-height;
+    font-weight: 500;
+    letter-spacing: 0;
+    @include media-breakpoint-up( xl) {
+        font-size: $h5-font-size;
+    }
+}
+
+h6,
+.h6 {
+    font-size: 16px;
+    line-height: $h6-line-height;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    @include media-breakpoint-up(xl) {
+        font-size: $h6-font-size;
+    }
+}
+
+// Link
+a {
+    transition: color .2s;
+}
+
+.link-inherit {
+    color: inherit;
+    &:hover {
+        color: $primary;
+    }
+}
+
+// Emphasis
+mark,
+.mark {
+    color: color-yiq( $mark-bg);
+}
+
+// Bold text
+strong {
+    font-weight: $font-weight-bold;
+}
+
+// Text big
+.bigger {
+    font-size: $font-size-lg;
+    line-height: $line-height-lg;
+}
+
+.biggest {
+    font-size: $h5-font-size;
+    line-height: $h5-line-height;
+    letter-spacing: 0;
+}
+
+// Links
+.link-hover {
+    color: $link-hover-color;
+}
+
+.link-press {
+    color: $link-color;
+}
+
+// Context Dark
+.context-dark {
+    a:not([class]) {
+        color: $primary;
+        &:hover {
+            color: darken($primary, 10%);
+        }
+    }
+    &,
+    #{headings()} {
+        color: $white;
+    }
+}
+
+// Heading creative
+.heading-creative {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 120px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: $gray-300;
+    >* {
+        margin-top: 0;
+    }
+}
+
+.heading-creative-image {
+    width: auto;
+    height: 0.99em;
+    margin: 0 -16px;
+}
+
+// Media
+@include media-breakpoint-up(md) {
+    .heading-creative {
+        font-size: 140px;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .heading-creative {
+        font-size: 160px;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .heading-creative {
+        font-size: 180px;
+    }
+}
+
+@include media-breakpoint-up(xxl) {
+    .heading-creative {
+        font-size: 200px;
+    }
+}

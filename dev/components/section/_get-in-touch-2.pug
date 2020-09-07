@@ -1,0 +1,25 @@
+include ../list/_list
+
+// Get in touch
+section#contacts.section.section-lg.section-one-screen
+	.container
+		.row.row-30.justify-content-center
+			.col-xs-10.col-md-8.col-lg-6.col-xl-5.col-xxl-4
+				.box.text-center
+					h3 Log In
+					p Lorem ipsum dolor sit amet, consectetur adipiscing
+					form.rd-mailform
+						.form-group
+							input.form-control( type='text', name='name', placeholder='Your name *', data-constraints='@Required' )
+						.form-group
+							input.form-control( type='password', name='password', placeholder='Password *', data-constraints='@Required' )
+						.offset-xxs.group-40.d-flex.flex-wrap.flex-xs-nowrap.align-items-center
+							button.btn.btn-block( type='submit' ) Log in
+						.offset-xxs
+							a( href='#' ) Forgot password?
+						.offset-xs
+							hr.divider
+						.offset-xs.group-20.d-inline-flex.flex-wrap.align-items-center
+							div Log in with socials
+							div
+								+list-social

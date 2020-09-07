@@ -1,0 +1,83 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../base/mixins";
+@import "../bootstrap/scss/mixins";
+
+
+// Base
+.video {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+
+	&::before,
+	&::after,
+	.video-border {
+		position: absolute;
+		border-radius: inherit;
+		pointer-events: none;
+	}
+
+	&::before,
+	&::after {
+		content: '';
+	}
+
+	&::before {
+	  top: -9.8%;
+	  right: -9.8%;
+	  bottom: -9.8%;
+	  left: -9.8%;
+		box-shadow: 0 0 4px #262829, inset 1px 1px 1px rgba(64, 65, 68, 0.81), 1px 1px 1px #1A1B1F;
+	}
+
+	&::after {
+		top: -10.72%;
+		right: -10.72%;
+		bottom: -10.72%;
+		left: -10.72%;
+		box-shadow: inset 1px 1px 1px #1A1B1F, 1px 1px 1px rgba(64, 65, 68, 0.81);
+	}
+
+	.video-border {
+		top: -27%;
+		right: -27%;
+		bottom: -27%;
+		left: -27%;
+		border: 1px solid rgba( $gray-300, .05 );
+	}
+}
+
+.video-icon {
+	position: absolute;
+	font-size: px-to-rem( 40px );
+	line-height: 1;
+	color: $gray-300;
+}
+
+
+// Contexts
+.desktop {
+	.video {
+		&::before,
+		&::after,
+		.video-border {
+			transition: $transition-base;
+		}
+	}
+
+	.video:hover {
+		&::before,
+		&::after {
+			transform: scale( .95 );
+		}
+
+		.video-border {
+			transform: scale( .9 );
+		}
+	}
+}

@@ -1,0 +1,23 @@
+<svg width="324" height="729" viewBox="0 0 324 729" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.835693" width="322.664" height="357.752"/>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="324" height="358">
+<rect x="0.835693" width="322.664" height="357.752"/>
+</mask>
+<g mask="url(#mask0)">
+<g style="mix-blend-mode:multiply">
+<path d="M-227.035 48.5057C-227.035 4.32288 -191.217 -31.4944 -147.035 -31.4944H471.059C515.242 -31.4944 551.059 4.32283 551.059 48.5056V666.6C551.059 710.782 515.242 746.6 471.059 746.6H-147.035C-191.217 746.6 -227.035 710.782 -227.035 666.6V48.5057Z" fill="#6C5BA7"/>
+</g>
+</g>
+<rect x="104.873" y="339.104" width="124.894" height="389.896"/>
+<mask id="mask1" mask-type="alpha" maskUnits="userSpaceOnUse" x="104" y="339" width="126" height="391">
+<rect x="104.873" y="339.104" width="124.894" height="389.896"/>
+</mask>
+<g mask="url(#mask1)">
+<g style="mix-blend-mode:multiply">
+<path d="M-229.814 49.4321C-229.814 5.24934 -193.996 -30.5679 -149.814 -30.5679H484.954C529.137 -30.5679 564.954 5.24936 564.954 49.4321V684.2C564.954 728.382 529.137 764.2 484.954 764.2H-149.814C-193.996 764.2 -229.814 728.382 -229.814 684.2V49.4321Z" fill="#6C5BA7"/>
+</g>
+</g>
+<g style="mix-blend-mode:color-dodge" opacity="0.5">
+<rect x="0.835693" width="322.664" height="729"/>
+</g>
+</svg>

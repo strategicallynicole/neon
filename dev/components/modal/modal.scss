@@ -1,0 +1,70 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../base/mixins";
+@import "../bootstrap/scss/mixins";
+@import "../bootstrap/scss/modal";
+
+
+// Base
+.modal {
+	.btn + .btn {
+		margin-top: 0;
+	}
+}
+
+.modal-content {
+	width: calc( 100% - 30px );
+	margin: 30px 15px;
+	border: none;
+	background: transparent;
+}
+
+.modal-dialog {
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.modal-body {
+	padding: px-to-rem( 30px );
+	border: $border-width solid transparent;
+	border-radius: $border-radius-xl;
+	@include gradient2( 135deg, 139deg );
+	background-clip: padding-box, border-box;
+	background-origin: padding-box, border-box;
+	box-shadow: $box-shadow-lg;
+}
+
+.close {
+	position: absolute;
+	top: px-to-rem( 20px );
+	right: px-to-rem( 20px );
+	font-size: px-to-rem( 22px );
+	line-height: 1;
+	color: $gray-600;
+
+	&:hover {
+		color: $gray-300;
+	}
+}
+
+.modal-backdrop {
+	transform: translateZ( -100px );
+}
+
+
+// Media
+@include media-breakpoint-between(xs, xs) {
+	.modal-dialog {
+		max-width: $modal-md;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.modal-body {
+		padding: $modal-inner-padding;
+	}
+}

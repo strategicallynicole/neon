@@ -1,0 +1,63 @@
+include ../form/_form
+include ../list/_list
+include ../rights/_rights
+
+// Get in touch
+section#contacts.section.section-lg
+	.container
+		.row.row-30.align-items-xl-center.justify-content-xxl-between
+			.col-lg-6
+				h2 READY TO TAME YOUR MARKETING MONSTERS?
+				p.bigger We are located in the better half of our namesake, the City of Oaks, Raleigh, NC.
+				.neumorphic
+					.pipedriveWebForms(data-pd-webforms='https://webforms.pipedrive.com/f/1yq98v6TP6gADuI8HH8xmCsXzjZzL4SPZD4Oq8US2hxLNN9hBMQYtpKWAGIBw7ald')
+						script(src='https://webforms.pipedrive.com/f/loader')
+				//form.rd-mailform( data-form-output='form-output-global', data-form-type='contact', method='post', action='components/rd-mailform/rd-mailform.php' )
+					.row.row-30
+						.col-xs-6
+							.form-group
+								input.form-control( type='text', name='name', placeholder='Your name *', data-constraints='@Required' )
+						.col-xs-6
+							.form-group
+								input.form-control( type='email', name='email', placeholder='Your e-mail address *', data-constraints='@Email @Required' )
+						.col-12
+							.form-group
+								textarea.form-control( name='question', placeholder='Your question', rows='5', data-constraints='@Required' )
+					.offset-sm.group-40.d-flex.flex-wrap.flex-xs-nowrap.align-items-center
+						button.btn( type='submit' ) Subscribe
+						+checkbox({ id: 'check1' }) Lorem ipsum dolor sit amet, consectetur adipiscing.
+			.col-lg-6.col-xxl-5
+				.box.px-xl-3.px-xxl-4
+					.row.row-30
+						.col-md-6.col-lg-12.col-xl-6
+							h4 Get The Scoop:
+							.group-30.offset-sm
+								a.btn.pl-1( href='#' )
+									span.btn-icon.icon.icon-round.icon-sm.icon-primary.icon-style-3.mdi-twitter
+									span Twitter
+								a.btn.pl-1( href='#' )
+									span.btn-icon.icon.icon-round.icon-sm.icon-primary.icon-style-3.mdi-linkedin
+									span LinkedIn
+						.col-md-6.col-lg-12.col-xl-6
+							h4 Contacts:
+							table.table.table-sm.table-responsive-xl.table-no-bordered.bigger
+								tbody
+									tr
+										td.text-right.text-600.pl-0.align-middle Ph.
+										td.biggest: a.link-inherit( href='tel:#' ) 1-919-823-4333
+									tr
+										td.text-right.text-600.pl-0 Mail.
+										td: a.link-inherit( href='mailto:#' ) hello@oakwave.com
+									tr
+										td.text-right.text-600.pl-0 Office.
+										td 10324 Baileywick Raleigh, NC 27613
+
+					hr.divider
+
+					.group-20.d-flex.flex-wrap.align-items-center.justify-content-between
+						div
+							+list-social
+						div
+							+rights.bigger
+
+	#form-output-global.form-output.snackbar.snackbar-secondary

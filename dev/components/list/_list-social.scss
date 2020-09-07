@@ -1,0 +1,12 @@
+// Base
+.list-social {
+	@include group(20px, 10px);
+}
+
+.list-social-item {
+	display: inline-block;
+
+	> * {
+		vertical-align: middle;
+	}
+}

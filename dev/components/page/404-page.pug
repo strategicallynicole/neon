@@ -1,0 +1,19 @@
+extends ../base/_skeleton
+
+block variables
+	- pageName = '404 Page';
+
+block page
+	section.section.section-one-screen.text-center.justify-content-between
+		.section-one-screen-header
+			+logo
+		.section-one-screen-body
+			.container
+				.heading-creative
+					span 4
+					+img( 'image-20-217x198.png' ).heading-creative-image
+					span 4
+				h4 Page Not Found
+				.offset-sm
+					a.btn( href='index.html' ) Go to Home Page
+		.section-one-screen-footer

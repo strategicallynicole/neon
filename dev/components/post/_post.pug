@@ -1,0 +1,39 @@
+//- Post
+	@param {object} data - data object
+	@param {string} data.img - quote img
+	@param {object} data.time - post time
+	@param {string} data.time.date - post time datetime
+	@param {string} data.time.text - post time text
+	@param {string} data.title - post title
+mixin post( data )
+	// Post
+	article.post.image-hover&attributes( attributes )
+		+img( data.img ).post-image
+		.post-caption
+			.post-time.h4
+				time( datetime= data.time.date )= data.time.text
+			h3.post-title
+				a( href='single-post.html' )= data.title
+		.post-dummy
+
+
+//- Post modern
+	@param {object} data - data object
+	@param {object} data.time - post time
+	@param {string} data.time.date - post time datetime
+	@param {string} data.time.text - post time text
+	@param {string} data.title - post title
+mixin post-modern( data )
+	// Post modern
+	article.post-modern&attributes( attributes )
+		if( data.link === null )
+			h4.post-modern-title= data.title
+		else
+			h4.post-modern-title
+				a( href='single-post.html' )= data.title
+		.post-modern-time.h5
+			time( datetime= data.time.date )= data.time.text
+		if( data.img )
+			.post-modern-figure
+				.image-hover
+					+img( data.img ).post-modern-image

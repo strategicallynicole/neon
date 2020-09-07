@@ -1,0 +1,118 @@
+// Elements spacing
+* + p {
+	margin-top: px-to-rem( 20px );
+}
+
+* + h1,
+* + h2,
+* + h3,
+* + h4,
+* + h5,
+* + h6 {
+	margin-top: px-to-rem( 20px );
+}
+
+* + img,
+* + figure {
+	margin-top: px-to-rem( 30px );
+}
+
+* + form {
+	margin-top: px-to-rem( 30px );
+}
+
+h4 + p,
+h5 + p,
+h6 + p {
+	margin-top: px-to-rem( 10px );
+}
+
+
+// Media
+@include media-breakpoint-up(md) {
+
+}
+
+
+// Spacers
+* + .offset-xxs {
+	margin-top: px-to-rem( 20px );
+}
+
+* + .offset-xl {
+	margin-top: px-to-rem( 50px );
+}
+
+* + .offset-xs,
+* + .offset-sm,
+* + .offset-md,
+* + .offset-lg {
+	margin-top: px-to-rem( 40px );
+}
+
+@include media-breakpoint-up( lg ) {
+	* + .offset-sm,
+	* + .offset-md,
+	* + .offset-lg,
+	* + .offset-xl {
+		margin-top: px-to-rem( 45px );
+	}
+}
+
+@include media-breakpoint-up( xl ) {
+	* + .offset-md,
+	* + .offset-lg,
+	* + .offset-xl {
+		margin-top: px-to-rem( 50px );
+	}
+}
+
+@include media-breakpoint-up( xxl ) {
+	* + .offset-lg {
+		margin-top: px-to-rem( 60px );
+	}
+
+	* + .offset-xl {
+		margin-top: px-to-rem( 70px );
+	}
+}
+
+
+// Group spacing
+html {
+	.group-5 {
+		@include group( px-to-rem( 5px ) );
+	}
+
+	.group-10 {
+		@include group( px-to-rem( 10px ) );
+	}
+
+	.group-15 {
+		@include group( px-to-rem( 15px ) );
+	}
+
+	.group-20 {
+		@include group( px-to-rem( 20px ) );
+	}
+
+	.group-25 {
+		@include group( px-to-rem( 25px ) );
+	}
+
+	.group-30 {
+		@include group( px-to-rem( 30px ) );
+	}
+
+	.group-40 {
+		@include group( px-to-rem( 40px ) );
+	}
+}
+
+
+// Offset
+@include media-breakpoint-up(xxl) {
+	.indent-negative-1 {
+		margin-left: px-to-rem( -101px );
+	}
+}

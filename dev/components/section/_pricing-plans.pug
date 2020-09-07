@@ -1,0 +1,74 @@
+include ../pricing/_pricing
+include ../multiswitch/_multiswitch
+
+// Pricing plans
+section#pricing.section.section-lg
+	.container
+		.row.justify-content-center
+			.col-xxl-10
+				.group-20.d-sm-flex.align-items-sm-end.justify-content-sm-between.text-center
+					h2 Pricing Plan
+					div
+						+switch-with-text({
+							targets:   { targets: '#multiswitch, #pricing-group', state: true },
+							textLeft:  'Annual',
+							textRight: 'Monthly'
+						})#multiswitch
+
+				#pricing-group.pricing-group.offset-xs
+					// Owl Carousel
+					.owl-carousel.owl-style-1.owl-item-end(
+						data-owl={
+							loop: false,
+							mouseDrag: false,
+							dots: true,
+							autoplay: false,
+							responsive: {
+								768: {
+									items: 2
+								},
+								992: {
+									items: 3
+								},
+								1600: {
+									items: 3,
+									margin: 100
+								}
+							}
+						} )
+						+pricing({
+							title:     'Basic',
+							price:     '14',
+							priceYear: '159'
+						}).pricing-primary.block.block-sm.block-center( data-animate!={ class: 'fadeInUp' } )
+							ul.list.list-marked-check.d-inline-block.text-left
+								li.list-item 32 GB Cloud Storage
+								li.list-item eCommerce Integration
+								li.list-item.disabled Regular Updates
+								li.list-item.disabled 24/7 Support
+								li.list-item.disabled Regular Updates
+						+pricing({
+							badge:     true,
+							title:     'Standard',
+							price:     '30',
+							priceYear: '350'
+						}).pricing-secondary.block.block-sm.block-center( data-animate!={ class: 'fadeInUp' } )
+							ul.list.list-marked-check.d-inline-block.text-left
+								li.list-item 32 GB Cloud Storage
+								li.list-item eCommerce Integration
+								li.list-item Regular Updates
+								li.list-item 24/7 Support
+								li.list-item.disabled Regular Updates
+						+pricing({
+							title:     'Premium',
+							price:     '50',
+							priceYear: '550'
+						}).pricing-success.block.block-sm.block-center( data-animate!={ class: 'fadeInUp' } )
+							ul.list.list-marked-check.d-inline-block.text-left
+								li.list-item 32 GB Cloud Storage
+								li.list-item eCommerce Integration
+								li.list-item Regular Updates
+								li.list-item 24/7 Support
+								li.list-item Regular Updates
+
+include ../modal/_modal

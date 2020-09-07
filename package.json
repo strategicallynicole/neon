@@ -1,0 +1,26 @@
+{
+  "name": "Intense",
+  "version": "4.3.0",
+  "description": "Multipage site template",
+  "main": "gulpfile.js",
+  "scripts": {
+    "run express": "node app.js"
+  },
+  "author": "TemplateMonster",
+  "license": "UNLICENSED",
+  "dependencies": {},
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "autoprefixer": "^9.8.6",
+    "babel": "^6.23.0",
+    "browser-sync": "^2.26.12",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "gulp-sass": "^4.1.0",
+    "node-sass-middleware": "^0.11.0",
+    "path": "^0.12.7",
+    "pug": "^3.0.0",
+    "sass": "^1.26.10",
+    "tempaw-functions": "^2.4.2"
+  }
+}

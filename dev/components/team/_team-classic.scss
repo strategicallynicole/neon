@@ -1,0 +1,27 @@
+// Team Classic
+
+.team-classic {
+
+	.image-hover {
+		display: inline-block;
+		border-radius: 4px;
+		overflow: hidden;
+	}
+}
+
+.team-classic-name {
+	* + & {
+		@include media-breakpoint-up(xl) {
+			margin-top: 30px;
+		}
+	}
+}
+
+.team-classic-position {
+	color: $gray-600;
+	font-weight: 400;
+
+	* + & {
+		margin-top: 2px;
+	}
+}

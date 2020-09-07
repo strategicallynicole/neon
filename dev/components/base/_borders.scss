@@ -1,0 +1,61 @@
+// Border
+
+
+// Media
+@each $breakpoint in map-keys( $grid-breakpoints ) {
+	$infix: breakpoint-infix( $breakpoint, $grid-breakpoints );
+	@include media-breakpoint-up( $breakpoint, $grid-breakpoints ) {
+		@each $prop in ( top, left, right, bottom ) {
+			.border#{$infix}-#{$prop} {
+				position: relative;
+				border-#{$prop}: $border-width solid $border-color;
+
+				&::before {
+					position: absolute;
+					content: '';
+					opacity: .9;
+
+					@if( $prop == top ) {
+						top: 0;
+						right: auto;
+						bottom: auto;
+						left: 0;
+						width: 100%;
+						height: $border-width;
+						@include gradient1( 180deg );
+					}
+
+					@if( $prop == right ) {
+						top: 0;
+						right: 0;
+						bottom: auto;
+						left: auto;
+						width: $border-width;
+						height: 100%;
+						@include gradient1( 90deg );
+					}
+
+					@if( $prop == bottom ) {
+						top: auto;
+						right: auto;
+						bottom: 0;
+						left: 0;
+						width: 100%;
+						height: $border-width;
+						@include gradient1( 180deg );
+					}
+
+					@if( $prop == left ) {
+						top: 0;
+						right: auto;
+						bottom: auto;
+						left: 0;
+						width: $border-width;
+						height: 100%;
+						@include gradient1( 90deg );
+					}
+				}
+			}
+		}
+	}
+}

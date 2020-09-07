@@ -1,0 +1,124 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+
+// Base
+.partner {
+	position: relative;
+	display: block;
+	text-align: center;
+	padding: 18% 8%;
+	z-index: 1;
+
+	&::before {
+	  position: absolute;
+	  content: '';
+	  top: 0;
+	  right: 0;
+	  bottom: 0;
+	  left: 0;
+		border: $border-width solid transparent;
+		border-radius: $border-radius-xl;
+		@include gradient2( 135deg, 139deg );
+		background-clip: padding-box, border-box;
+		background-origin: padding-box, border-box;
+		box-shadow: $box-shadow-lg;
+		opacity: 0;
+		visibility: hidden;
+		transition: $transition-base;
+	}
+}
+
+.partner-image {
+	position: relative;
+}
+
+.partner-group {
+	position: relative;
+	border-top: $border-width solid $border-color;
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		content: '';
+		height: 1px;
+		width: 100%;
+		@include gradient1( 180deg );
+		opacity: .9;
+	}
+}
+
+.partner-group-item {
+	border-width: 0 0 $border-width $border-width;
+	border-style: solid ;
+	border-color: $border-color;
+
+	&::before,
+	&::after {
+		position: absolute;
+		display: block;
+		content: '';
+		opacity: .9;
+	}
+
+	&::before {
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: $border-width;
+		@include gradient1( 90deg );
+	}
+
+	&::after {
+		bottom: 0;
+		left: 0;
+		height: $border-width;
+		width: 100%;
+		@include gradient1( 180deg );
+	}
+}
+
+.desktop {
+	.partner:hover {
+		&::before {
+			top: px-to-rem( -10px );
+			right: px-to-rem( -10px );
+			bottom: px-to-rem( -10px );
+			left: px-to-rem( -10px );
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+
+// Media
+@include media-breakpoint-down(xs) {
+	.partner-group-item {
+		&:nth-child( 3n + 1 ) {
+			border-left: none;
+
+			&::before {
+				display: none;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(sm) {
+	.partner-group-item {
+		&:nth-child( 4n + 1 ) {
+			border-left: none;
+
+			&::before {
+				display: none;
+			}
+		}
+	}
+}

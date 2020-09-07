@@ -1,0 +1,49 @@
+include ../quote/_quote
+
+// What People Say
+section.section.section-lg
+	.container
+		h2.text-center What People Say
+		.row.row-offset-lg.justify-content-center
+			.col-lg-10.col-xl-9.col-xxl-8
+				.owl-carousel.owl-visible(
+				data-owl={
+					dots: true,
+					margin: 60,
+					responsive: {
+						1200: {
+							margin: 110
+						},
+						1600: {
+							margin: 160
+						}
+					}
+				} )
+					+quote-creative({
+						name:    'Dr. Sandy F., SVP',
+						time: {
+							date: '2020',
+							text: 'Jan 10, 2020'
+						},
+						text:    'For eight years, we haven\'t been able to boil down our offering and make it palatable.  In a highly complex industry and business, you did just that.',
+						company: 'from a B2B and B2G biotechnolgy and research institute'
+					})
+					+quote-creative({
+						name:    'Scott Z., CEO',
+						time: {
+							date: '2020',
+							text: 'Jan 10, 2020'
+						},
+						text:    'In an insanely short time, you conceptualized and delivered upon an idea 100x better than we had brought to the table.  You even saw opportunity we had entirely overlooked.',
+						company: 'from a B2B and business-to-government fulfillment group'
+					})
+					+quote-creative({
+						name:    'Dr. Jay Stevens, CEO',
+						time: {
+							date: '2020',
+							text: 'Jan 10, 2020'
+						},
+						text:    'Your strategy put meat and merit on the bone! I am so pumped full of ideas.',
+						company: ''
+					})
+				

@@ -1,0 +1,44 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+
+// Base
+.counter {
+	position: relative;
+	padding: px-to-rem( 40px, 35px );
+	border: $border-width solid transparent;
+	@include gradient2( 135deg, 139deg );
+	background-clip: padding-box, border-box;
+	background-origin: padding-box, border-box;
+	box-shadow: $box-shadow-lg;
+	border-radius: $border-radius-xl;
+
+	&::before {
+	  position: absolute;
+	  content: '';
+	  top: 0;
+	  right: 0;
+	  bottom: 0;
+	  left: 0;
+		margin: px-to-rem( 10px );
+		border: $border-width solid rgba( $primary, .6 );
+		border-radius: inherit;
+		box-shadow: inset 0 0 0 1px #292C31;
+	}
+}
+
+
+.counter-content {
+	position: relative;
+}
+
+
+// Spacing
+* + .counter-divider,
+* + .counter-title {
+	margin-top: px-to-rem( 14px );
+}

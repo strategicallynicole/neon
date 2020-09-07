@@ -1,0 +1,13 @@
+//- Accordion
+	@param {object} data - data object
+	@param {string} data.title - accordion title
+	@param {string} data.text - accordion text
+mixin accordion( data )
+	// Accordion
+	article.accordion-item( class= data.active ? 'active' : '' )&attributes( attributes )
+		button.accordion-head
+			span.accordion-title.h5= data.title
+			span.accordion-icon
+				span.icon.icon-circle.icon-sm.icon-style-2.mdi-plus
+		.accordion-body
+			.accordion-text= data.text

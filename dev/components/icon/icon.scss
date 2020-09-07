@@ -1,0 +1,208 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../base/mixins";
+@import "../bootstrap/scss/mixins";
+// Variables
+$icon-gradient-color: #2D3135;
+$icon-gradient-color-1: #3E4248;
+$icon-gradient-color-2: #2A2E32;
+$icon-gradient-color-3: #313437;
+$icon-gradient-color-4: #4C4F54;
+$icon-gradient-color-5: #232A30;
+$icon-gradient-color-6: #1A1D21;
+$icon-gradient-color-7: #393D42;
+$icon-shadow-color: #151618;
+$icon-shadow-color-1: #C3C8CD;
+$icon-shadow-color-2: #535666;
+// Variables
+$icon-size: ( ( 'xs', 36px, 20px), ( 'sm', 44px, 24px), ( 'md', 50px, 24px), ( 'lg', 60px, 30px), ( 'xl', 100px, 40px));
+// Base
+.icon {
+    font-weight: 400;
+    letter-spacing: 0;
+    text-shadow: none;
+    color: inherit;
+}
+
+a.icon,
+button.icon {
+    transition: $transition-longer;
+    &:hover,
+    &.hover {
+        color: $gray-300;
+    }
+}
+
+// Modifiers
+.icon-rect,
+.icon-round,
+.icon-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2em;
+    height: 2em;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.icon-round {
+    border-radius: $border-radius-lg;
+}
+
+.icon-circle {
+    border-radius: 50%;
+}
+
+// Sizing
+@each $postfix,
+$size,
+$font-size in $icon-size {
+    .icon-#{$postfix} {
+        font-size: px-to-rem( $font-size);
+        &.icon-rect,
+        &.icon-round,
+        &.icon-circle {
+            width: px-to-rem( $size);
+            height: px-to-rem( $size);
+        }
+    }
+}
+
+// Theming
+@each $color,
+$value in $theme-colors {
+    .icon-#{$color} {
+        color: $value;
+    }
+    a,
+    button {
+        &.icon-#{$color} {
+            &:hover {
+                color: if( get-yiq( $value) < 30, lighten( $value, 10%), darken( $value, 10%));
+            }
+        }
+    }
+}
+
+// Icon style 1
+.icon-style-1 {
+    &.icon-rect,
+    &.icon-round,
+    &.icon-circle {
+        border: px-to-rem( 2.5px) solid transparent;
+        background-image: linear-gradient(135deg, transparent 0% 50%, $icon-gradient-color 50%, $icon-gradient-color-1 100%), linear-gradient(135deg, $icon-gradient-color-1 0%, $icon-gradient-color-2 50%, $icon-gradient-color-1 50%, $icon-gradient-color-3 100%);
+        background-position: 0% 0%, 100% 100%;
+        background-size: 200% 200%;
+        background-clip: padding-box, border-box;
+        background-origin: padding-box, border-box;
+        box-shadow: $btn-box-shadow;
+    }
+}
+
+a.icon,
+button.icon {
+    &.icon-style-1 {
+        &.icon-rect,
+        &.icon-round,
+        &.icon-circle {
+            &:hover,
+            &.hover {
+                background-position: 100% 100%, 0% 0%;
+                box-shadow: $btn-focus-box-shadow;
+            }
+        }
+    }
+}
+
+// Icon style 2
+.icon-style-2 {
+    &.icon-rect,
+    &.icon-round,
+    &.icon-circle {
+        background: linear-gradient( 136deg, $icon-gradient-color 0%, $icon-gradient-color-4 44% 56%, $icon-gradient-color-5 92%) 100% 100% / 200% 200%;
+        box-shadow: 6px 6px 22px rgba($icon-shadow-color, 0.65), -3px -1px 16px rgba($icon-shadow-color-1, 0.06);
+    }
+}
+
+a.icon,
+button.icon {
+    &.icon-style-2 {
+        &.icon-rect,
+        &.icon-round,
+        &.icon-circle {
+            &:hover,
+            &.hover {
+                background-position: 0% 0%;
+            }
+        }
+    }
+}
+
+// Icon style 3
+.icon-style-3 {
+    &.icon-rect,
+    &.icon-round,
+    &.icon-circle {
+        background: linear-gradient( 136deg, $icon-gradient-color 7%, $icon-gradient-color-1 50%, $icon-gradient-color 93%) 0% 0% / 200% 200%;
+        box-shadow: inset -2px -2px 2px rgba($icon-shadow-color-2, 0.14), inset 2px 2px 5px rgba($black, 0.38);
+    }
+}
+
+a.icon,
+button.icon {
+    &.icon-style-3 {
+        &.icon-rect,
+        &.icon-round,
+        &.icon-circle {
+            &:hover,
+            &.hover {
+                background-position: 100% 100%;
+                box-shadow: inset 2px 2px 2px rgba($icon-shadow-color-2, 0.14), inset -2px -2px 5px rgba($black, 0.38);
+            }
+        }
+    }
+}
+
+// Icon style 4
+.icon-style-4 {
+    &.icon-rect,
+    &.icon-round,
+    &.icon-circle {
+        background: linear-gradient( -32deg, $icon-gradient-color-6 3%, $icon-gradient-color-7 44% 56%, $icon-gradient-color-6 97%) 0% 0% / 200% 200%;
+        box-shadow: 4px 4px 18px rgba($black, 0.4), -4px -2px 16px rgba($icon-shadow-color-1, 0.08);
+    }
+}
+
+a.icon,
+button.icon {
+    &.icon-style-4 {
+        &.icon-rect,
+        &.icon-round,
+        &.icon-circle {
+            &:hover,
+            &.hover {
+                background-position: 100% 100%;
+                box-shadow: -4px -4px 18px rgba($black, 0.4), 4px 2px 16px rgba($icon-shadow-color-1, 0.08);
+            }
+        }
+    }
+}
+
+.title-icon {
+    display: flex;
+    .icon {
+        flex-shrink: 0;
+    }
+}
+
+.mdi-custom {
+    width: 100px !important;
+    padding: 10%;
+}
+
+article.blurb.blurb-boxed {
+    min-height: 300px !important;
+}

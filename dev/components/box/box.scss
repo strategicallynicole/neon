@@ -1,0 +1,26 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../base/mixins";
+@import "../bootstrap/scss/mixins";
+
+
+// Base
+.box {
+	padding: px-to-rem( 30px );
+	border: $border-width solid transparent;
+	border-radius: $border-radius-xl;
+	@include gradient2( 135deg, 139deg );
+	background-clip: padding-box, border-box;
+	background-origin: padding-box, border-box;
+	box-shadow: $box-shadow-lg;
+}
+
+
+// Media
+@include media-breakpoint-up(xl) {
+	.box {
+		padding: px-to-rem( 50px );
+	}
+}

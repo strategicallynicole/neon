@@ -1,0 +1,66 @@
+include ../post/_post
+include ../list/_list
+
+// News
+section.section.section-lg
+	.container
+		.row.row-30
+			.col-sm-10.col-md-8.col-lg-6.col-xl-5
+				#child-carousel.slick-slider( data-slick!={
+					infinite: false,
+					arrows: false,
+					asNavFor: '#carousel-parent'
+				} )
+					div
+						+post-modern({
+							title: 'Top 5 Mobile Apps for Successful Time Management: What to Choose if You are on Android and Want to Save Money',
+							time: {
+								date: '2020',
+								text: 'Jan 10, 2020'
+							}
+						})
+					div
+						+post-modern({
+							title: 'Top 5 Mobile Apps for Successful Time Management: What to Choose if You are on Android and Want to Save Money',
+							time: {
+								date: '2020',
+								text: 'Jan 10, 2020'
+							}
+						})
+					div
+						+post-modern({
+							title: 'Top 5 Mobile Apps for Successful Time Management: What to Choose if You are on Android and Want to Save Money',
+							time: {
+								date: '2020',
+								text: 'Jan 10, 2020'
+							}
+						})
+				#carousel-parent.slick-slider.mt-3(
+					data-slick!={
+						infinite: false,
+						asNavFor: '#child-carousel'
+					} )
+					div
+						.image-hover
+							+img( 'image-11-660x409' )
+					div
+						.image-hover
+							+img( 'image-12-660x409' )
+					div
+						.image-hover
+							+img( 'image-13-660x409' )
+			.col-lg-6.col-xl-6.offset-xl-1.col-xxl-4.offset-xxl-2
+				p.bigger Ut enim ad minim veniam, quis nostrud sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor.
+				p.bigger Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Ut enim ad minim veniam, quis nostrud sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit.
+				ul.list.list-marked.list-secondary.list-2-column.block.block-lg
+					li.list-item Task Management
+					li.list-item Reminders
+					li.list-item Messaging
+					li.list-item Regular Updates
+				h5.font-weight-normal.indent-negative-1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				.offset-xs
+					p.bigger Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+				.offset-xs.group-20.d-flex.flex-wrap.align-items-center
+					div Share This Post
+					div
+						+list-social

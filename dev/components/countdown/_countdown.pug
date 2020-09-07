@@ -1,0 +1,46 @@
+//- Countdown
+	@param {object} data - countdown data object
+	@param {string} from - countdown start date
+	@param {string} to - countdown end date
+	@param {string} count - count mode: 'until', 'since' or 'auto'
+	@param {number} tick - countdown render interval in milliseconds
+mixin countdown( data )
+	// Countdown
+	.countdown( data-countdown!= data )&attributes( attributes )
+		each item, i in [ 'days', 'hours', 'minutes', 'seconds' ]
+			-
+				var counterAttr = {}, circleAttr = {};
+				counterAttr[ 'data-counter-'+ item ] = true;
+				circleAttr[ 'data-progress-'+ item ] = true;
+			.countdown-block( class= 'countdown-block-'+ item )
+				svg.countdown-circle( x='0', y='0', width='124', height='124', viewbox='0 0 124 124' )&attributes( circleAttr )
+					g(filter='url(#filter0_di' + i + ')')
+						circle.bg( cx=62, cy=60, r=54 )
+					g(filter='url(#filter1_d' + i + ')')
+						circle.fg.clipped( cx=62, cy=60, r=54 )
+					defs
+						filter( id='filter0_di' + i, x='6', y='4', width='114', height='114', filterUnits='userSpaceOnUse', color-interpolation-filters='sRGB')
+							feflood(flood-opacity='0', result='BackgroundImageFix')
+							fecolormatrix(in='SourceAlpha', type='matrix', values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0')
+							feoffset(dx='1', dy='1')
+							fegaussianblur(stdDeviation='0.5')
+							fecolormatrix(type='matrix', values='0 0 0 0 0.25098 0 0 0 0 0.254902 0 0 0 0 0.266667 0 0 0 0.81 0')
+							feblend(mode='normal', in2='BackgroundImageFix', result='effect1_dropShadow')
+							feblend(mode='normal', in='SourceGraphic', in2='effect1_dropShadow', result='shape')
+							fecolormatrix(in='SourceAlpha', type='matrix', values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0', result='hardAlpha')
+							feoffset(dx='1', dy='1')
+							fegaussianblur(stdDeviation='0.5')
+							fecomposite(in2='hardAlpha', operator='arithmetic', k2='-1', k3='1')
+							fecolormatrix(type='matrix', values='0 0 0 0 0.101961 0 0 0 0 0.105882 0 0 0 0 0.121569 0 0 0 1 0')
+							feblend(mode='normal', in2='shape', result='effect2_innerShadow')
+						filter( id='filter1_d' + i, x='0', y='0', width='124', height='124', filterUnits='userSpaceOnUse', color-interpolation-filters='sRGB')
+							feflood(flood-opacity='0', result='BackgroundImageFix')
+							fecolormatrix(in='SourceAlpha', type='matrix', values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0')
+							feoffset(dy='2')
+							fegaussianblur(stdDeviation='3')
+							fecolormatrix(type='matrix', values='0 0 0 0 0.470588 0 0 0 0 0.772549 0 0 0 0 0.839216 0 0 0 0.2 0')
+							feblend(mode='normal', in2='BackgroundImageFix', result='effect1_dropShadow')
+							feblend(mode='normal', in='SourceGraphic', in2='effect1_dropShadow', result='shape')
+				.countdown-inner
+					.countdown-counter.h4&attributes( counterAttr ) 00
+					.countdown-title= item

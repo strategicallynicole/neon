@@ -1,0 +1,55 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+@import "../bootstrap/scss/nav";
+
+
+// Base
+.nav {
+	flex-wrap: nowrap;
+	white-space: nowrap;
+	scrollbar-width: thin;
+	scrollbar-color: rgba( $gray-400, .3 );
+	overflow-x: auto;
+	overflow-x: overlay;
+	overflow-y: hidden;
+
+	&::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+		background: rgba( $gray-400,.3 );
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: rgba( $gray-400, .8);
+	}
+
+	.mobile &,
+	&:hover {
+		&::-webkit-scrollbar {
+			width: 2px;
+			height: 2px;
+		}
+	}
+}
+
+
+// Spacing
+* + .tab {
+	margin-top: px-to-rem( 30px );
+}
+
+
+// Tabs
+.tab-content {
+	padding-top: px-to-rem( 30px );
+}
+
+
+// Layouts
+@import "nav-line";
+@import "nav-boxed";
+@import "nav-modern";

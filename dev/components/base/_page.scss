@@ -1,0 +1,34 @@
+// Page styles
+body {
+	font-size: 15px;
+	overflow-x: hidden;
+	letter-spacing: 0.02em;
+	text-shadow: 1px 1px 1px rgba(#191B21, 0.35);
+}
+
+html:not(.components-ready) * {
+	transition: 0s;
+}
+
+.page {
+	position: relative;
+	overflow: hidden;
+	min-height: 100vh;
+	opacity: 0;
+
+	.page-loaded & {
+		opacity: 1;
+	}
+
+	.rd-navbar-fixed-linked & {
+		padding-top: 60px;
+	}
+}
+
+html .page {
+	transition: opacity .25s;
+}
+
+html.components-ready .page {
+	transition: opacity .25s;
+}

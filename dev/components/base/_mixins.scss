@@ -1,0 +1,60 @@
+// Element-groups
+@mixin group( $offset-x, $offset-y: $offset-x ) {
+	margin-bottom: -$offset-y;
+	margin-left: -$offset-x;
+
+	&:empty {
+		margin-bottom: 0;
+		margin-left: 0;
+	}
+
+	> * {
+		margin-top: 0;
+		margin-bottom: $offset-y;
+		margin-left: $offset-x;
+	}
+}
+
+@mixin group-media( $offset-x, $offset-y: $offset-x ) {
+	margin-bottom: -$offset-y;
+	margin-left: -$offset-x;
+
+	> * {
+		margin-bottom: $offset-y;
+		margin-left: $offset-x;
+	}
+}
+
+@mixin groupX( $offset-x ) {
+	margin-left: -$offset-x;
+
+	> * {
+		margin-left: $offset-x;
+	}
+}
+
+@mixin groupY( $offset-y ) {
+	margin-bottom: -$offset-y;
+
+	> * {
+		margin-bottom: $offset-y;
+	}
+}
+
+
+// TODO moving
+@mixin gradient1( $deg: 0deg ) {
+	background-image: linear-gradient($deg, #2E3138 0%, #43464E 100%);
+}
+
+@mixin gradient2( $deg1: 0deg, $deg2: 0deg ) {
+	background-image:
+		linear-gradient($deg1, #3A3E41 0%, #2A2D30 49%, #242628 100%),
+		linear-gradient($deg2, #434B54 1%, #2A2C2F 45%, #191B1E 75%);
+}
+
+@mixin gradient3 {
+	background:
+		radial-gradient(37.53% 147.33% at 5.39% 8.57%, rgba($white, 0.07) 0%, rgba($white, 0) 100%),
+		linear-gradient(180deg, $gradient-color-1 0%, $gray-900 100%);
+}

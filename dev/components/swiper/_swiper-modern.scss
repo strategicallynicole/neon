@@ -1,0 +1,47 @@
+// Swiper modern
+.swiper-modern {
+	overflow: visible;
+	padding-bottom: px-to-rem( 60px );
+
+	.swiper-slide {
+		.blurb-boxed {
+			box-shadow: none;
+		}
+	}
+
+	.swiper-slide-active,
+	.swiper-slide-next,
+	.swiper-slide-next + .swiper-slide {
+		.blurb-boxed {
+			box-shadow: 15px 25px 15px rgba(21, 22, 24, 0.24), -4px -4px 15px rgba(195, 200, 205, 0.04);
+		}
+	}
+
+	.swiper-scrollbar {
+		height: 13px;
+		background: linear-gradient(85deg, #24262B 1%, #2A2C2E 98%);
+		box-shadow: inset -2px -4px 8px rgba(#494949, 0.4), inset 0px 4px 7px #151616;
+		border-radius: px-to-rem( 15px );
+	}
+
+	.swiper-scrollbar-drag {
+		margin: 2px 0 1px 2px;
+		height: 10px;
+		background: linear-gradient(175.7deg, #3E4248 0%, #313437 100%);
+		box-shadow: -1px 2px 2px rgba(#0F1216, 0.6), inset 0px -2px 1px #0E1216;
+	}
+}
+
+.swiper-modern-wrap {
+	overflow: hidden;
+	margin: px-to-rem( -30px, -30px, 0, -30px );
+	padding: px-to-rem( 30px, 30px, 0, 30px );
+}
+
+
+// Media
+@include media-breakpoint-up(md) {
+	.swiper-modern {
+		padding-bottom: px-to-rem( 80px );
+	}
+}

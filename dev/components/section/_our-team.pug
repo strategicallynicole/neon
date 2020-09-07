@@ -1,0 +1,68 @@
+include ../team/_team
+
+// About
+section#about.section.section-lg
+	.container
+		.carousel-title
+			h2 Our Team
+			.owl-detached-control
+		.owl-carousel.owl-carousel-team(
+			data-owl={
+				loop: false,
+				autoplay: false,
+				nav: true,
+				responsive: {
+					480:  { items: 2 },
+					992:  { items: 3 },
+					1200: { items: 4 }
+				},
+				navContainer: '.owl-detached-control'
+			})
+			+team-classic({
+				img: 'persons/person-01-385x441.jpg',
+				imgHover: 'media/persons/person-01-hover-385x441.jpg',
+				name: 'Eva Adams',
+				position: 'Product Manager'
+			})
+			+team-classic({
+				img: 'persons/person-02-385x441.jpg',
+				imgHover: 'media/persons/person-02-hover-385x441.jpg',
+				name: 'John Smith',
+				position: 'CEO “Neon”'
+			})
+			+team-classic({
+				img: 'persons/person-03-385x441.jpg',
+				imgHover: 'media/persons/person-03-hover-385x441.jpg',
+				name: 'Edward Lee',
+				position: 'Lead Developer'
+			})
+			+team-classic({
+				img: 'persons/person-04-385x441.jpg',
+				imgHover: 'media/persons/person-04-hover-385x441.jpg',
+				name: 'Samantha Jones',
+				position: 'UI Designer'
+			})
+			+team-classic({
+				img: 'persons/person-01-385x441.jpg',
+				imgHover: 'media/persons/person-01-hover-385x441.jpg',
+				name: 'Eva Adams',
+				position: 'Product Manager'
+			})
+			+team-classic({
+				img: 'persons/person-02-385x441.jpg',
+				imgHover: 'media/persons/person-02-hover-385x441.jpg',
+				name: 'John Smith',
+				position: 'CEO “Neon”'
+			})
+			+team-classic({
+				img: 'persons/person-03-385x441.jpg',
+				imgHover: 'media/persons/person-03-hover-385x441.jpg',
+				name: 'Edward Lee',
+				position: 'Lead Developer'
+			})
+			+team-classic({
+				img: 'persons/person-04-385x441.jpg',
+				imgHover: 'media/persons/person-04-hover-385x441.jpg',
+				name: 'Samantha Jones',
+				position: 'UI Designer'
+			})

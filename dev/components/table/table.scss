@@ -1,0 +1,178 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../bootstrap/scss/tables";
+@import "../base/mixins";
+
+
+// Base
+.table {
+	margin-bottom: 0;
+
+	th, td {
+		position: relative;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			content: '';
+			width: 100%;
+			height: $table-border-width;
+			@include gradient1( 180deg );
+			opacity: .9;
+		}
+	}
+
+	tr {
+		&:last-child {
+			th, td {
+				border-bottom: $table-border-width solid $table-border-color;
+
+				&::after {
+					position: absolute;
+					bottom: -(2 * $table-border-width);
+					left: 0;
+					content: '';
+					width: 100%;
+					height: $table-border-width;
+					@include gradient1( 180deg );
+					opacity: .9;
+				}
+			}
+		}
+	}
+}
+
+
+// Table hover
+.table-hover {
+
+	@include media-breakpoint-up(xl) {
+		tr {
+			position: relative;
+			will-change: transform;
+			transform: translate3d(0,0,0);
+
+			&::before {
+				will-change: transform;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: -(2 * $table-border-width);
+				left: 0;
+				content: '';
+				border: $border-width solid transparent;
+				border-radius: $border-radius-lg;
+				@include gradient2( 175deg, 175deg );
+				background-clip: padding-box, border-box;
+				background-origin: padding-box, border-box;
+				box-shadow: $box-shadow;
+				transition: $transition-base;
+				visibility: hidden;
+				opacity: 0;
+				pointer-events: none;
+			}
+
+			th, td {
+				border-color: transparent;
+				transition: $transition-base;
+
+				&::before,
+				&::after {
+					transition: $transition-base;
+				}
+			}
+
+			&:hover {
+				&::before {
+					right: px-to-rem( -15px );
+					left: px-to-rem( -15px );
+					visibility: visible;
+					opacity: 1;
+				}
+
+				&,
+				+ tr {
+					th, td {
+						border-color: transparent;
+
+						&::before {
+							opacity: 0;
+						}
+					}
+				}
+
+				&:last-child {
+					th, td {
+						&::after {
+							opacity: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Table no bordered
+.table-no-bordered {
+	th, td {
+		border: none;
+
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+
+	tr:last-child {
+		th, td {
+			border: none;
+		}
+	}
+}
+
+
+// Spacing
+* + .table {
+	margin-top: px-to-rem( 30px );
+}
+
+
+// Media
+@include media-breakpoint-up(xl) {
+
+}
+
+.macos {
+	.table-hover {
+		tr {
+			display: flex;
+		}
+
+		td {
+			&:nth-of-type(1) {
+				flex: 0 0 41%;
+				max-width: 41%;
+			}
+
+			&:nth-of-type(2) {
+				flex: 0 0 21%;
+				max-width: 21%;
+			}
+
+			&:nth-of-type(3) {
+				flex: 0 0 25%;
+				max-width: 25%;
+			}
+
+			&:nth-of-type(4) {
+				flex: 0 0 13%;
+				max-width: 13%;
+			}
+		}
+	}
+}

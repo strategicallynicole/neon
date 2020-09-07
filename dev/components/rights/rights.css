@@ -1,0 +1,2 @@
+.grayscale {	-webkit-filter: grayscale(100%);	-moz-filter: grayscale(100%);	filter: grayscale(100%);	transition: all 200ms ease-in-out;}.grayscale:hover {	-webkit-filter: grayscale(0);	-moz-filter: grayscale(0);	filter: grayscale(0);}p.rights {	color: rgba(107, 111, 119, 0.7);}p.rights a {	color: inherit;}p.rights a:hover {	color: #6c5ba7;}* + p.rights {	margin-top: 1.25rem;}.row + p.rights {	margin-top: 2.5rem;}
+/*# sourceMappingURL=rights.css.map */

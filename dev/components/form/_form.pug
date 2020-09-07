@@ -1,0 +1,31 @@
+//- Checkbox
+	@param {object} [data] - options object
+	@param {string} [data.name] - input field name attribute
+	@param {string} [data.id] - custom label id
+	@param {boolean} [data.checked] - checkbox state
+	@param {boolean} [data.disabled] - checkbox disabling
+mixin checkbox( data )
+	-
+		data = data || {};
+		data.id = data.id || Math.random().toString( 36 ).substring( 2 );
+	// Checkbox
+	.custom-control.custom-checkbox&attributes( attributes )
+		input.custom-control-input( type='checkbox', id= data.id, name= data.name, checked= data.checked, disabled= data.disabled )
+		label.custom-control-label( for= data.id )
+			block
+
+//- Radio
+	@param {object} [data] - options object
+	@param {string} [data.name] - input field name attribute
+	@param {string} [data.id] - custom label id
+	@param {boolean} [data.checked] - checkbox state
+	@param {boolean} [data.disabled] - checkbox disabling
+mixin radio( data )
+	-
+		data = data || {};
+		data.id = data.id || Math.random().toString( 36 ).substring( 2 );
+	// Radio
+	.custom-control.custom-radio&attributes( attributes )
+		input.custom-control-input( type='radio', id= data.id, name= data.name, checked= data.checked, disabled= data.disabled )
+		label.custom-control-label( for= data.id )
+			block

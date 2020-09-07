@@ -1,0 +1,117 @@
+// Base
+.nav-modern {
+	margin: px-to-rem( 0, 40px );
+
+	.nav-link {
+		position: relative;
+		margin-right: px-to-rem( 12px );
+		padding: px-to-rem( 14px, 30px );
+		border-top-left-radius: px-to-rem( 4px );
+		border-top-right-radius: px-to-rem( 4px );
+		color: $gray-500;
+		transition: $transition-base;
+
+		&::before {
+		  position: absolute;
+		  content: '';
+		  top: 0;
+		  right: 0;
+		  bottom: 0;
+		  left: 0;
+			display: inline-flex;
+			align-items: center;
+			justify-content: flex-end;
+			padding: px-to-rem( 14px );
+			border-radius: inherit;
+			font-family: 'Material Design Icons';
+			font-size: px-to-rem( 20px );
+			line-height: 1;
+			color: transparent;
+			background: #4E5159;
+			text-shadow: none;
+			transition: inherit;
+		}
+
+		&:hover {
+			color: $gray-300;
+
+			&::before {
+				background: #5E6068;
+			}
+		}
+
+		&.active {
+			color: $gray-300;
+
+			&::before {
+				color: $primary;
+				background: #5E6068;
+			}
+		}
+	}
+}
+
+
+// Tabs
+.tab-modern {
+	> .tab-content {
+		padding: px-to-rem( 30px );
+		border: $border-width solid transparent;
+		border-radius: $border-radius-xl;
+		@include gradient2( 135deg, 139deg );
+		background-clip: padding-box, border-box;
+		background-origin: padding-box, border-box;
+		box-shadow: $box-shadow-lg;
+	}
+}
+
+
+// Media
+@include media-breakpoint-up(sm) {
+	.nav-modern {
+		display: block;
+		overflow: visible;
+		margin: px-to-rem( 100px, 0 );
+
+		.nav-link {
+			margin: px-to-rem( 0, 30px, 12px, 0 );
+			border-top-left-radius: px-to-rem( 0 );
+			border-top-right-radius: px-to-rem( 4px );
+			border-bottom-right-radius: px-to-rem( 4px );
+
+			&::before {
+				content: '\f14a';
+			}
+
+			&.active {
+				&::before {
+					right: px-to-rem( -30px );
+				}
+			}
+		}
+	}
+
+
+	.tab-modern {
+		display: flex;
+		flex-direction: row-reverse;
+
+		> .tab-content {
+			flex-grow: 1;
+		}
+	}
+}
+
+@include media-breakpoint-up(xxl) {
+	.nav-modern {
+		.nav-link {
+			padding-left: px-to-rem( 45px );
+		}
+	}
+
+	.tab-modern {
+		> .tab-content {
+			padding: px-to-rem( 60px );
+		}
+	}
+}

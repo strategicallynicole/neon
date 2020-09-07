@@ -1,0 +1,17 @@
+// Modal
+#modal-login.modal.fade( tabindex='-1', role='dialog' )
+	.modal-dialog( role='document' )
+		.modal-content
+			.modal-body.text-center
+				h3 Log In
+				p Lorem ipsum dolor sit amet, consectetur adipiscing
+				form.rd-mailform
+					.form-group
+						input.form-control( type='text', name='name', placeholder='Your name *', data-constraints='@Required' )
+					.form-group
+						input.form-control( type='password', name='password', placeholder='Password *', data-constraints='@Required' )
+					.offset-xxs.group-40.d-flex.flex-wrap.flex-xs-nowrap.align-items-center
+						button.btn.btn-block( type='submit' ) Log in
+
+			button.close( type='button', data-dismiss='modal', aria-label='Close' )
+				span( aria-hidden='true' ) ×

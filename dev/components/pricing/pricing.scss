@@ -1,0 +1,139 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+
+// Base
+.pricing-body {
+	text-align: center;
+	padding: px-to-rem( 30px, 20px );
+	border: $border-width solid transparent;
+	border-radius: $border-radius-xl;
+	@include gradient2( 135deg, 139deg );
+	background-clip: padding-box, border-box;
+	background-origin: padding-box, border-box;
+	box-shadow: $box-shadow-lg;
+}
+
+.pricing-badge {
+	text-align: center;
+	border-top-right-radius: $border-radius-xl;
+	border-top-left-radius: $border-radius-xl;
+	color: $white;
+	background: $secondary;
+	box-shadow: 0 2px 6px rgba($secondary, 0.2);
+}
+
+.pricing-badge + .pricing-body {
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+}
+
+.pricing-details {
+	display: inline-flex;
+	align-items: center;
+	text-align: left;
+	@include group( px-to-rem( 35px ) );
+}
+
+.pricing-price {
+	position: relative;
+	padding-left: px-to-rem( 18px );
+	line-height: 1;
+
+	&::before {
+	  position: absolute;
+	  content: '';
+	  top: 0;
+	  left: 0;
+		height: 100%;
+		width: px-to-rem( 5px );
+		border-radius: px-to-rem( 5px );
+		background: $secondary;
+		box-shadow: 0 2px 6px rgba($secondary, 0.2);
+	}
+}
+
+.pricing-period {
+	line-height: 1;
+}
+
+.pricing-month {
+	display: none;
+}
+
+.pricing-group.active {
+	.pricing-year {
+		display: none;
+	}
+
+	.pricing-month {
+		display: inline;
+	}
+}
+
+.pricing-divider {
+	width: 68%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+// Spacing
+* + .pricing {
+	margin-top: px-to-rem( 40px );
+}
+
+* + .pricing-details {
+	margin-top: px-to-rem( 10px );
+}
+
+* + .pricing-divider {
+	margin-top: px-to-rem( 25px );
+}
+
+* + .pricing-list {
+	margin-top: px-to-rem( 20px );
+}
+
+* + .pricing-btn {
+	margin-top: px-to-rem( 30px );
+}
+
+
+// Modifying
+.pricing-primary {
+	.pricing-badge,
+	.pricing-price::before {
+		background: $primary;
+	}
+}
+
+.pricing-secondary {
+	.pricing-badge,
+	.pricing-price::before {
+		background: $secondary;
+	}
+}
+
+.pricing-success {
+	.pricing-badge,
+	.pricing-price::before {
+		background: $success;
+	}
+}
+
+
+// Media
+@include media-breakpoint-up(xl) {
+	.pricing-body {
+		padding-bottom: px-to-rem( 50px );
+	}
+}
+
+
+// Layouts
+@import 'pricing-modern';

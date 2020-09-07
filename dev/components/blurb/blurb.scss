@@ -1,0 +1,158 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+
+// Base
+.blurb {
+	.blurb-header > * {
+		margin-top: 0;
+	}
+}
+
+.blurb-embed {
+	line-height: 1;
+
+	.blurb-number {
+		color: inherit;
+	}
+}
+
+.blurb-header {
+	display: flex;
+	align-items: center;
+	@include group( 20px );
+}
+
+
+// Spacing
+* + .blurb {
+	margin-top: px-to-rem( 40px );
+}
+
+* + .blurb-title {
+	margin-top: px-to-rem( 20px );
+}
+
+* + .blurb-text {
+	margin-top: px-to-rem( 10px );
+}
+
+* + .blurb-embed {
+	margin-top: px-to-rem( 30px );
+}
+
+.blurb-header + .blurb-text {
+	margin-top: px-to-rem( 20px );
+}
+
+
+// Blurb boxed
+.blurb-boxed {
+	padding: px-to-rem( 30px, 20px );
+	border: $border-width solid transparent;
+	border-radius: $border-radius-xl;
+	@include gradient2( 135deg, 139deg );
+	background-clip: padding-box, border-box;
+	background-origin: padding-box, border-box;
+	box-shadow: $box-shadow-lg;
+}
+
+
+// Blurb hovered
+.desktop {
+	.blurb-hovered {
+		@include media-breakpoint-up(lg) {
+			position: relative;
+
+			&::before,
+			&::after {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				display: block;
+				content: '';
+				height: 1px;
+				width: 100%;
+			}
+
+			&::before {
+				margin-bottom: 1px;
+				background: $border-color;
+			}
+
+			&::after {
+				@include gradient1( 180deg );
+				opacity: .9;
+			}
+		}
+	}
+
+	.blurb-hovered-item {
+		position: relative;
+
+		@include media-breakpoint-up(lg) {
+			padding-bottom: px-to-rem( 30px );
+		}
+
+		@include media-breakpoint-up(xl) {
+			padding-bottom: px-to-rem( 50px );
+		}
+
+		@include media-breakpoint-up(xxl) {
+			padding-bottom: px-to-rem( 120px );
+		}
+
+		.blurb {
+			transition: $transition-base;
+		}
+
+		&::after {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			display: block;
+			content: '';
+			width: 0;
+			height: px-to-rem( 5px );
+			border-radius: $border-radius;
+			box-shadow: 0 2px 6px rgba($primary, 0.2);
+			background: $primary;
+			transition: $transition-base;
+		}
+
+		&:hover {
+			.blurb {
+				transform: translateY( -5px );
+
+				@include media-breakpoint-up(xl) {
+					transform: translateY( -20px );
+				}
+			}
+
+			&::after {
+				width: 100%;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+
+// Media
+@include media-breakpoint-up(lg) {
+	.blurb-lg-right {
+		text-align: right;
+
+		.blurb-header {
+			flex-direction: row-reverse;
+		}
+	}
+}
+
+
+// layouts
+@import "blurb-creative";

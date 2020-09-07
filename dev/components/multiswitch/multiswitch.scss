@@ -1,0 +1,250 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+
+$switch-toggle-width: 58px;
+$switch-toggle-height: 34px;
+$switch-toggle-slider-size: $switch-toggle-height - 3px;
+$switch-toggle-border-radius: $rounded-pill;
+$switch-toggle-color: #35393D;
+$switch-toggle-bg: #212224;
+$switch-toggle-shadow: $input-box-shadow;
+$switch-toggle-active-color: linear-gradient(139deg, #B9E6F3 10%, #83C4D7 88%);
+
+$switch-toggle-modern-width: 82px;
+$switch-toggle-modern-height: 42px;
+$switch-toggle-modern-slider-size: $switch-toggle-modern-height - 3px;
+$switch-toggle-modern-bg: #292B2D;
+$switch-toggle-modern-active-bg: $switch-toggle-bg;
+
+@import "../bootstrap/scss/mixins";
+
+
+// Base
+.guide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	border: 1px solid transparent;
+	background-clip: padding-box, border-box;
+	background-origin: padding-box, border-box;
+	border-radius: $switch-toggle-border-radius;
+	box-shadow: $switch-toggle-shadow;
+	transition: $transition-base;
+}
+
+.slider {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: $switch-toggle-color;
+	border-radius: $switch-toggle-border-radius;
+	box-shadow: inset 0px -1px 1px #181A1D;
+	transition: $transition-base;
+}
+
+.switch-toggle-group {
+	display: inline-block;
+}
+
+.switch-toggle-group {
+	font-size: px-to-rem( 17px );
+}
+
+
+// Switch toggle
+.switch-toggle {
+	position: relative;
+	width: $switch-toggle-width;
+	height: $switch-toggle-height;
+	flex-shrink: 0;
+	display: inline-block;
+	cursor: pointer;
+
+	.guide {
+		background-image:
+			linear-gradient(136deg, $switch-toggle-bg 0% 100% ),
+			linear-gradient(136deg, #3F4A54 0%, #1E2328 100% );
+	}
+
+	.slider {
+		top: ( $switch-toggle-height - $switch-toggle-slider-size + 1px )/2;
+		left: ( $switch-toggle-height - $switch-toggle-slider-size + 1px )/2;
+		height: $switch-toggle-slider-size;
+		width: $switch-toggle-slider-size;
+
+		&::before {
+		  position: absolute;
+		  content: '';
+		  top: 0;
+		  right: 0;
+		  bottom: 0;
+		  left: 0;
+			border-radius: inherit;
+			box-shadow: inherit;
+			background: $switch-toggle-active-color;
+			transition: inherit;
+			opacity: 0;
+		}
+	}
+
+	&.active {
+		.slider {
+			left: $switch-toggle-width - $switch-toggle-slider-size - ( $switch-toggle-height - $switch-toggle-slider-size + 1px )/2;
+			background-color: transparent;
+
+			&::before {
+				opacity: 1;
+			}
+		}
+	}
+
+	&-disabled {
+		opacity: 0.3;
+		pointer-events: none;
+	}
+}
+
+
+// Spacing
+* + .switch-toggle {
+	margin-top: px-to-rem( 16px );
+}
+
+
+// Switch toggle modern
+.switch-toggle-modern {
+	position: relative;
+	width: $switch-toggle-modern-width;
+	height: $switch-toggle-modern-height;
+	flex-shrink: 0;
+	display: inline-block;
+	cursor: pointer;
+
+	.guide {
+		background-image:
+			linear-gradient(136deg, $switch-toggle-modern-active-bg 0% 33%, $switch-toggle-modern-bg 66% 100% ),
+			linear-gradient(136deg, #3F4A54 0%, #1E2328 100% );
+		background-size: 300%, auto;
+		background-position-x: 100%;
+	}
+
+	.slider {
+		top: ( $switch-toggle-modern-height - $switch-toggle-modern-slider-size + 1px )/2;
+		left: ( $switch-toggle-modern-height - $switch-toggle-modern-slider-size + 1px )/2;
+		height: $switch-toggle-modern-slider-size;
+		width: $switch-toggle-modern-slider-size;
+	}
+
+	.slider-dot {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+		&::before,
+		&::after {
+			display: inline-block;
+			content: '';
+			width: $switch-toggle-modern-height / 7;
+			height: $switch-toggle-modern-height / 7;
+			margin: 2px;
+			border: 1px solid transparent;
+			border-radius: 50%;
+			background-image: linear-gradient(110deg, #798188 0%, #1F2328 93%), linear-gradient(130deg, #4D5258 0%, #2A3036 100%);
+			background-clip: padding-box, border-box;
+			background-origin: padding-box, border-box;
+			box-shadow: 1px 1px 2px rgba($black, 0.3), -1px -1px 2px rgba($white, 0.06);
+		}
+	}
+
+	&.active {
+		.guide {
+			background-position-x: 0%;
+		}
+
+		.slider {
+			left: $switch-toggle-modern-width - $switch-toggle-modern-slider-size - ( $switch-toggle-modern-height - $switch-toggle-modern-slider-size + 1px )/2;
+		}
+	}
+
+	&-disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+}
+
+
+// Spacing
+* + .switch-toggle-modern {
+	margin-top: px-to-rem( 12px );
+}
+
+
+// Switch toggle modern
+.switch-container {
+	position: relative;
+
+	.switch-inner {
+		&:first-child {
+			transition: $transition-base;
+		}
+
+		&:last-child {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			opacity: 0;
+			visibility: hidden;
+			pointer-events: none;
+			transition: $transition-base;
+		}
+	}
+
+	&.active {
+		.switch-inner {
+			&:first-child {
+				visibility: hidden;
+				opacity: 0;
+				pointer-events: none;
+			}
+
+			&:last-child {
+				opacity: 1;
+				visibility: visible;
+				pointer-events: auto;
+			}
+		}
+	}
+}
+
+[data-multi-switch]:before {
+	pointer-events: none;
+}
+
+
+// Switch text
+.switch-text-right {
+	color: $gray-300;
+}
+
+.switch-text-left,
+.switch-text-right {
+	transition: $transition-base;
+}
+
+.switch-text.active {
+	.switch-text-left {
+		color: $gray-300;
+	}
+
+	.switch-text-right {
+		color: inherit;
+	}
+}

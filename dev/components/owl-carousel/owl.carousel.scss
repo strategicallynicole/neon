@@ -1,0 +1,185 @@
+@import "../bootstrap/scss/_functions";
+@import "../base/_functions";
+@import "../base/_variables";
+@import "../bootstrap/scss/_variables";
+@import "../bootstrap/scss/_mixins";
+
+
+// Variables
+$owl-base: $gray-900;
+$owl-primary: $primary;
+$icon-gradient-color:   #2D3135;
+$icon-gradient-color-1: #3E4248;
+$icon-gradient-color-2: #2A2E32;
+$icon-gradient-color-3: #313437;
+$icon-gradient-color-4: #4C4F54;
+$icon-gradient-color-5: #232A30;
+$icon-gradient-color-6: #1A1D21;
+$icon-gradient-color-7: #393D42;
+
+$icon-shadow-color:   #151618;
+$icon-shadow-color-1: #C3C8CD;
+$icon-shadow-color-2: #535666;
+
+@import "defaults";
+
+
+// Base
+.owl-carousel {
+	// Dots
+	.owl-dots {
+		text-align: center;
+		margin-top: px-to-rem( 40px );
+		font-size: 0;
+		line-height: 0;
+	}
+
+	.owl-dot {
+		position: relative;
+		display: inline-block;
+		text-align: center;
+		width: 15px;
+		height: 15px;
+		margin: 0 6px;
+		zoom: 1;
+
+		span {
+			display: inline-block;
+			width: inherit;
+			height: inherit;
+			border-radius: 50%;
+			border: 1px solid transparent;
+			background-image:
+				linear-gradient(133deg, #3E4248 13%, #1F2224 44%, #1F2224 50%, #3E4248 100%),
+				linear-gradient(135deg, #474A50 0%, #16171A 50%, #595B63 50%, #0A0B0E 100%);
+			background-position: 0% 0%, 100% 100%;
+			background-size: 200% 200%;
+			background-clip: padding-box, border-box;
+			background-origin: padding-box, border-box;
+			box-shadow: 2px 2px 4px #222427, -2px -2px 4px rgba(86, 83, 83, 0.25);
+			transition: .3s ease-in-out;
+		}
+
+		&:hover {
+			span {
+				background-position: 100% 100%, 0% 0%;
+				box-shadow: none;
+			}
+		}
+
+		&.active {
+			span {
+				background-position: 100% 100%;
+				box-shadow: none;
+			}
+		}
+	}
+}
+
+
+// Spacing
+* + .owl-carousel {
+	margin-top: px-to-rem( 40px );
+}
+
+
+// Media
+@include media-breakpoint-up(lg) {
+	* + .owl-carousel {
+		margin-top: px-to-rem( 50px );
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.owl-carousel {
+		.owl-dots {
+			margin-top: px-to-rem( 60px );
+		}
+	}
+}
+
+@include media-breakpoint-up(xxl) {
+	* + .owl-carousel {
+		margin-top: px-to-rem( 70px );
+	}
+}
+
+
+// Owl styles
+.owl-visible {
+	.owl-stage-outer {
+		overflow: visible;
+	}
+}
+
+.owl-style-1 {
+	.owl-stage-outer {
+		margin: px-to-rem( -30px, -60px, -50px, -30px );
+		padding: px-to-rem( 30px, 60px, 50px, 30px );
+	}
+
+	.owl-item {
+		opacity: 0;
+
+		&.active {
+			opacity: 1;
+		}
+	}
+}
+
+.owl-item-end {
+	.owl-stage {
+		display: flex;
+		align-items: flex-end;
+	}
+}
+
+.carousel-title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.owl-detached-control {
+
+	.owl-prev,
+	.owl-next {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		margin: 5px;
+		width: 40px;
+		height: 40px;
+		background: linear-gradient( 136deg, $icon-gradient-color 0%, $icon-gradient-color-4 44% 56%, $icon-gradient-color-5 92% ) 100% 100% / 200% 200%;
+		box-shadow: 6px 6px 22px rgba($icon-shadow-color, 0.65), -3px -1px 16px rgba($icon-shadow-color-1, 0.06);
+		border-radius: 50%;
+		color: $gray-500;
+		transition: $transition-base;
+
+		&:hover {
+			background-position: 0 0;
+		}
+
+		&::before {
+			font-family: 'Material Design Icons';
+			font-size: 24px;
+			line-height: 1;
+		}
+	}
+
+	.owl-prev {
+		&::before {
+			content: '\f14a';
+		}
+	}
+
+	.owl-next {
+		&::before {
+			content: '\f14f';
+		}
+	}
+}
+
+* + .owl-carousel-team {
+	margin-top: 45px;
+}

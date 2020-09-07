@@ -1,0 +1,37 @@
+include _navigation
+
+mixin rd-navbar
+	//RD Navbar
+	nav#sidebar
+		.sidebar-header
+			img.effect-shine(src='/media/img/logo-symbol-purple-white.svg' width='125' style='max-width:100%;width:150px')
+		ul.list-unstyled.components
+			li
+			a(href='/strategic-framework/' aria-expanded='false').effect-shine Strategic Framework
+			li
+			a(href='/about-oakwave-marketing-and-strategy/' aria-expanded='false').effect-shine About OAKwave
+			li
+			a(href='/thank-you/' aria-expanded='false').effect-shine Thank you!
+			p Dummy Heading
+			li.active
+			li
+			a(href='#') About
+			li
+			a.dropdown-toggle(href='#pageSubmenu' data-toggle='collapse' aria-expanded='false') Pages
+			ul#pageSubmenu.collapse.list-unstyled
+				li
+				a(href='#') Page 1
+				li
+				a(href='#') Page 2
+				li
+				a(href='#') Page 3
+			li
+			a(href='#') Portfolio
+			li
+			a(href='#') Contact
+		#content
+		nav.navbar.navbar-expand-lg.navbar-light.bg-dark
+			.container-fluid
+			button#sidebarCollapse.btn.btn-info(type='neubtn')
+				i.fas.fa-align-left
+				span Toggle Sidebar

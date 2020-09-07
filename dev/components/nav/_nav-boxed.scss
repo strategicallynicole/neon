@@ -1,0 +1,71 @@
+// Base
+.nav-boxed {
+	justify-content: space-between;
+	padding: 1px;
+	font-size: $font-size-base;
+	border: $nav-tabs-border-width solid transparent;
+	border-radius: $nav-tabs-border-radius;
+	color: $gray-400;
+	background-image:
+		linear-gradient(166deg, $input-bg 0% 100% ),
+		linear-gradient(166deg, #616972 0%, #3E464F 100% );
+	background-clip: padding-box, border-box;
+	background-origin: padding-box, border-box;
+	box-shadow: $input-box-shadow;
+
+	.nav-item {
+		margin-right: px-to-rem( 20px );
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	.nav-link {
+		position: relative;
+		border-radius: $nav-tabs-border-radius;
+		white-space: nowrap;
+		color: inherit;
+		transition: $transition-base;
+		z-index: 0;
+
+		&::before {
+			position: absolute;
+			content: '';
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			border-radius: inherit;
+			background: linear-gradient(162deg, #2A2E32 0%, #3E4248 50%, #2A2E32 100%);
+			background-size: 200% 200%;
+			transition: inherit;
+			opacity: 0;
+			z-index: -1;
+		}
+
+		&.active {
+			&::before {
+				background-position: 100%;
+				box-shadow: $btn-box-shadow;
+			}
+		}
+
+		&.active,
+		&:hover {
+			color: inherit;
+
+			&::before {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+
+// Tabs
+.tab-boxed {
+	> .tab-content {
+		padding-top: px-to-rem( 20px );
+	}
+}

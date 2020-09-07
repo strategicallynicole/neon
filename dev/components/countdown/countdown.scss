@@ -1,0 +1,96 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+
+
+// Base styles
+.countdown {
+	display: flex;
+	text-align: center;
+	margin: 0 -15px;
+	line-height: 1.2;
+}
+
+.countdown-block {
+	position: relative;
+	margin: 0 8px;
+}
+
+.countdown-block-days {
+	.fg {
+		stroke: $secondary;
+	}
+}
+
+.countdown-block-hours {
+	.fg {
+		stroke: $primary;
+	}
+}
+
+.countdown-block-minutes {
+	.fg {
+		stroke: $success;
+	}
+}
+
+.countdown-block-seconds {
+	display: none;
+
+	.fg {
+		stroke: $pink;
+	}
+}
+
+.countdown-inner {
+	position: relative;
+}
+
+.countdown-circle {
+	max-width: 124px;
+	width: 100%;
+
+	.bg,
+	.fg {
+		fill: transparent;
+		stroke-width: 4px;
+	}
+
+	.bg {
+		stroke: #262829;
+	}
+}
+
+.countdown-inner {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding-bottom: px-to-rem( 5px );
+}
+
+.countdown-title {
+	margin-top: px-to-rem( 3px );
+	text-transform: capitalize;
+}
+
+
+// Spacing
+* + .countdown {
+	margin-top: px-to-rem( 30px );
+}
+
+
+// Media
+@include media-breakpoint-up( sm ) {
+	.countdown-block-seconds {
+		display: block;
+	}
+}

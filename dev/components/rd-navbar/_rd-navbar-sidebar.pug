@@ -1,0 +1,40 @@
+include _navigation
+include ../rights/_rights
+
+//RD Navbar
+header.section.rd-navbar-wrap
+	nav.rd-navbar.rd-navbar-sidebar
+		.navbar-container
+			.navbar-cell
+				.navbar-panel
+					button.navbar-switch( data-multi-switch!= {
+						targets: '.rd-navbar',
+						scope:   '.rd-navbar',
+						isolate: '[data-multi-switch]'
+					})
+
+					.navbar-logo
+						a.navbar-logo-link( href='index.html' )
+							+img( logo.default ).navbar-logo-default( alt= logo.name )
+
+			.navbar-spacer
+			.navbar-cell
+				.navbar-sidebar
+					+navigation( menu )
+				button.navbar-switch-2( data-multi-switch!= {
+					targets: '.navbar-sidebar',
+					scope: '.rd-navbar',
+					isolate: '[data-multi-switch]'
+				}) #[span Menu]
+
+			.navbar-cell
+				.navbar-subpanel
+					.navbar-subpanel-item
+						button.navbar-button.navbar-info-button.mdi-dots-vertical( data-multi-switch!= {
+							targets: '.rd-navbar',
+							scope: '.rd-navbar',
+							class: 'navbar-info-active',
+							isolate: '[data-multi-switch]'
+						})
+						.navbar-info
+							button.btn.btn-sm( data-modal-trigger!={ target: '#modal-login' } ) Get App

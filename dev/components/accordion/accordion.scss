@@ -1,0 +1,101 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../base/mixins";
+@import "../bootstrap/scss/mixins";
+
+
+// Base
+.accordion-item {
+	text-align: left;
+	border: $border-width solid transparent;
+	border-radius: $border-radius-lg;
+	@include gradient2( 175deg, 170deg );
+	background-clip: padding-box, border-box;
+	background-origin: padding-box, border-box;
+	box-shadow: $box-shadow;
+}
+
+.accordion-head,
+.accordion-body {
+	display: block;
+	width: 100%;
+}
+
+.accordion-head {
+	position: relative;
+	text-align: left;
+	padding: px-to-rem( 18px, 80px, 18px, 25px );
+
+	&.active {
+		.accordion-title {
+			background: linear-gradient(178deg, #B9E6F3 10%, #83C4D7 88%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		.accordion-icon > * {
+			color: $primary;
+			transform: rotate( 45deg );
+		}
+	}
+}
+
+.accordion-body {
+	padding: px-to-rem( 0, 25px, 25px );
+}
+
+.accordion-title {
+	display: block;
+	font-weight: 400;
+}
+
+.accordion-icon {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: px-to-rem( 70px );
+
+	> * {
+		color: $body-color;
+		transition: $transition-base;
+	}
+}
+
+.accordion-text {
+	position: relative;
+	border-top: $hr-border-width solid $hr-border-color;
+	padding-top: px-to-rem( 18px );
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		content: '';
+		height: $border-width;
+		width: 100%;
+		@include gradient1( 180deg );
+		opacity: .9;
+	}
+}
+
+
+// Spacing
+.accordion-item + .accordion-item {
+	margin-top: px-to-rem( 30px );
+}
+
+
+// Media
+@include media-breakpoint-up(md) {
+	.accordion-head,
+	.accordion-body {
+		padding-right: px-to-rem( 100px );
+	}
+}

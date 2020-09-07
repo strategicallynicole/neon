@@ -1,0 +1,48 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+
+// Base
+.image-hover {
+	position: relative;
+
+	canvas {
+		position: absolute;
+		content: '';
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100% !important;
+		height: 100% !important;
+	}
+
+	img {
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+	}
+}
+
+
+// Contexts
+.video {
+	cursor: pointer;
+
+	.video-icon {
+		pointer-events: none;
+	}
+
+	.image-hover {
+		overflow: hidden;
+		border-radius: 50%;
+	}
+
+	canvas {
+		border-radius: 50%;
+	}
+}

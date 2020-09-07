@@ -1,0 +1,42 @@
+//- Blurb
+	@param {object} data - data object
+	@param {string} data.embed - class for icon
+	@param {string} data.title - blurb title
+	@param {string} data.text - blurb text
+mixin blurb( data )
+	// Blurb
+	article.blurb&attributes( attributes )
+		.blurb-header
+			.blurb-embed!= data.embed
+			.blurb-title.h5= data.title
+		.blurb-text= data.text
+
+
+//- Blurb boxed
+	@param {object} data - data object
+	@param {string} data.embed - class for icon
+	@param {string} data.title - blurb title
+	@param {string} data.text - blurb text
+mixin blurb-boxed( data )
+	// Blurb boxed
+	article.blurb.blurb-boxed&attributes( attributes )
+		.media.media-sm( class= data.media )
+			.media-left
+				.blurb-embed!= data.embed
+			.media-body
+				.blurb-title.h5!= data.title
+				.blurb-text= data.text
+
+
+//- Blurb creative
+	@param {object} data - data object
+	@param {string} data.embed - class for icon
+	@param {string} data.title - blurb title
+	@param {string} data.text - blurb text
+mixin blurb-creative( data )
+	// Blurb creative
+	article.blurb.blurb-creative&attributes( attributes )
+		.blurb-embed!= data.embed
+		.blurb-body
+			.blurb-title.h5!= data.title
+			.blurb-text= data.text

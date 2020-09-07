@@ -1,0 +1,112 @@
+include ../list/_list
+	section#home.section
+		.container
+			.swiper-container.swiper-pagination-creative(
+				data-swiper!= {
+					loop: true,
+					autoplay:    {
+						delay:                5000,
+						disableOnInteraction: true
+					},
+					breakpoints: {
+						320:  {
+							autoplay: true
+						},
+						1200: {
+							autoplay: {
+								delay:                5000,
+								disableOnInteraction: true
+										}
+								}
+							}
+						} 	
+			)
+	section#home.section
+		.swiper-container.swiper-pagination-minimal(
+			data-swiper!= {
+				autoplay: {
+					delay:                5000,
+					disableOnInteraction: true
+				},
+				breakpoints: {
+					320: {
+						autoplay: true
+					},
+					1200: {
+						autoplay: {
+							delay: 5000,
+							disableOnInteraction: true
+						}
+					}
+				}
+			} )
+		.bg-layer.d-flex.align-items-end
+			.swiper-wrapper
+				.swiper-slide.section-lg
+					.container
+						.row.align-items-center.justify-content-lg-between.flex-md-row-reverse
+							.col-6.col-md-6.col-lg-6.text-right
+								img(src='https://www.oakwave.com/assets/images/temp/image-1@2x.webp', width='600')
+							.col-md-6.col-lg-6.col-xxl-6
+								h1 WE NEED TO TALK
+								.offset-xxs
+									p.biggest It's about your marketing and sales strategy again... It's been... underwhelming.
+								.offset-sm
+									button.btn( data-modal-trigger!={ target: '#modal-login' } ) Your Curiosity Compels You
+								.offset-sm
+									button.btn( data-modal-trigger!={ target: '#modal-login' } ) Run Away
+				.swiper-slide.section-lg
+					.container
+						.row.align-items-center.justify-content-lg-between.flex-md-row-reverse
+							.col-6.col-md-6.col-xxl-6.text-center
+								img(src='https://www.oakwave.com/assets/images/temp/image-2@2x.webp', width='600' ).ml-xxl-4
+							.col-md-6.col-lg-6.col-xxl-6
+								h1 WHY DO YOU KEEP YOUR FEELINGS ALL BOTTLED UP?
+								.offset-xxs
+									p.biggest You just want a solution that doesn’t give you more headaches than it gives you in actual acquisitions and makes more money for you than it costs. 
+								.offset-sm
+									button.btn( data-modal-trigger!={ target: '#modal-login' } ) Release your inner fears.
+				.swiper-slide.section-lg
+					.container
+						.row.align-items-center.justify-content-md-between.flex-md-row-reverse
+							.col-6.col-md-6.col-lg-6.col-xxl-6.text-center
+								img(src='https://www.oakwave.com/assets/images/temp/image-3@2x.webp', width='600' ).mb-xxl-3
+							.col-md-6.col-lg-6.col-xxl-6
+								h1 WHY DO YOU KEEP YOUR FEELINGS ALL BOTTLED UP?
+								.offset-xxs
+									p.biggest You just want a solution that doesn’t give you more headaches than it gives you in actual acquisitions and makes more money for you than it costs.
+								.offset-sm
+									button.btn( data-modal-trigger!={ target: '#modal-login' } ) 
+				.swiper-slide.section-lg
+					.container
+						.row.align-items-center.justify-content-md-between.flex-md-row-reverse
+							.col-6.col-md-6.col-lg-6.col-xxl-6.text-center
+								img(src='https://www.oakwave.com/assets/images/temp/image-4@2x.webp', width='600' ).mb-xxl-3
+							.col-md-6.col-lg-6.col-xxl-6
+								h1 WE HELP BUSINESSES QUIT DUCKIN’ AROUND 
+								.offset-xxs
+									p.biggest Your revenue is the only KPI that matters. Everything else is just bullshit noise.  We believe in breathing new life, fresh perspectives, and genuine solutions into broken marketing and sales. 
+								.offset-sm
+									button.btn( data-modal-trigger!={ target: '#modal-login' } ) 
+				.swiper-slide.section-lg
+					.container
+						.row.align-items-center.justify-content-md-between.flex-md-row-reverse
+							.col-6.col-md-6.col-lg-6.col-xxl-6.text-center
+								img(src='https://www.oakwave.com/assets/img/renderings/spiderbot.png', width='700' ).mb-xxl-3
+							.col-md-6.col-lg-6.col-xxl-6
+								h1 YOU’VE BEEN LOOKING FOR US FOR A LONG TIME. 
+								.offset-xxs
+									p.biggest We're marketers, strategists, workhorses, consultants, and most likely the last folks standing in a zombie apocalypse.
+								.offset-sm
+									button.btn( data-modal-trigger!={ target: '#modal-login' } ) 
+				.swiper-slide.section-lg
+					.container
+						.row.align-items-center.justify-content-md-between.flex-md-row-reverse
+							.col-6.col-md-6.col-lg-6.col-xxl-6.text-center
+								img(src='https://www.oakwave.com/assets/images/temp/image-6@2x.png', width='600' ).mb-xxl-3
+							.col-md-6.col-lg-6.col-xxl-6
+								h1 WE’RE GOOD AT WHAT EVERYONE SAYS JUST SAYS THEY’RE GOOD AT.
+								.offset-xxs
+									p.biggest Hands down, we are the most resourceful, creative, problem-solving marketing geniuses you will ever find. We’re really, really good at campaign concepts, branding, content, and strategy... and really, really bad at corporate frills, small talk, and sending Christmas cards. 
+								.offset-sm
+									button.btn( data-modal-trigger!={ target: '#modal-login' } ) 

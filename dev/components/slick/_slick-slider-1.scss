@@ -1,0 +1,33 @@
+// Slick slider 1
+.slick-slider-1 {
+	.slick-prev,
+	.slick-next {
+		top: auto;
+		bottom: 2.6vw;
+		height: px-to-rem( 69px );
+		width: px-to-rem( 69px );
+		transform: none;
+	}
+
+	.slick-prev {
+		left: 3.65vw;
+	}
+
+	.slick-next {
+		right: 3.65vw;
+	}
+}
+
+
+// Media
+@include media-breakpoint-up(xl) {
+	* + .slick-slider-1 {
+		margin-top: px-to-rem( 80px );
+	}
+}
+
+@include media-breakpoint-up(xxl) {
+	* + .slick-slider-1 {
+		margin-top: px-to-rem( 100px );
+	}
+}
